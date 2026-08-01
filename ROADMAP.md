@@ -82,7 +82,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] Agent Architecture
 - [x] LangGraph
-- [ ] Tool Calling
+- [x] Tool Calling
 - [ ] Multi-Agent Systems
 
 ---

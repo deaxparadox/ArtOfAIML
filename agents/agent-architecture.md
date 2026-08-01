@@ -17,7 +17,7 @@ If a plain LLM call is like asking someone a single question and getting one ans
 The standard agent loop:
 
 1. **Observe** the current state — the task, plus whatever has happened so far.
-2. The LLM **decides the next action** — often expressed as calling a specific tool with specific arguments (covered in depth in the next chapter, Tool Calling).
+2. The LLM **decides the next action** — often expressed as calling a specific tool with specific arguments (covered in depth in a later chapter, Tool Calling).
 3. The action is **executed outside the model itself** — actually calling an API, running a query — and its result becomes a new observation.
 4. **Repeat** from step 1 with the updated state, until the model decides the task is complete.
 
