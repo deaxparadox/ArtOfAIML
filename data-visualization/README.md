@@ -7,3 +7,4 @@ Chapters that include a rendered plot store the image in `assets/`, alongside th
 ## Chapters
 
 - [Matplotlib](matplotlib.md)
+- [Plotly](plotly.md)
