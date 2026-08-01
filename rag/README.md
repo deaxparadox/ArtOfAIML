@@ -8,3 +8,4 @@ This folder covers Retrieval-Augmented Generation: giving a language model acces
 - [Chunking](chunking.md)
 - [Retrieval](retrieval.md)
 - [Reranking](reranking.md)
+- [Evaluation](evaluation.md)

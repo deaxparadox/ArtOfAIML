@@ -74,7 +74,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] Chunking
 - [x] Retrieval
 - [x] Reranking
-- [ ] Evaluation
+- [x] Evaluation
 
 ---
 
