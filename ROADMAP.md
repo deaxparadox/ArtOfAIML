@@ -62,7 +62,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] Transformers
 - [x] Attention
-- [ ] Prompt Engineering
+- [x] Prompt Engineering
 
 ---
 
