@@ -10,3 +10,4 @@ This folder covers the statistical foundations used throughout the rest of this 
 - [Variance](variance.md)
 - [Standard Deviation](standard-deviation.md)
 - [Probability](probability.md)
+- [Bayes Theorem](bayes-theorem.md)

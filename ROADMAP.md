@@ -26,7 +26,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] Variance
 - [x] Standard Deviation
 - [x] Probability
-- [ ] Bayes Theorem
+- [x] Bayes Theorem
 
 ---
 
