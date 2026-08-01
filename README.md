@@ -32,6 +32,8 @@ AUTHOR_GUIDE.md
 
 machine-learning/
 statistics/
+python-for-ml/
+data-visualization/
 deep-learning/
 nlp/
 embeddings/

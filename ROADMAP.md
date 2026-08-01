@@ -34,7 +34,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Python for ML
 
-- [ ] NumPy
+- [x] NumPy
 - [ ] Pandas
 - [ ] Polars
 
