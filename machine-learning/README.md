@@ -14,4 +14,5 @@ This folder covers the foundational concepts of machine learning: what it is, wh
 - [ML Workflow](ml-workflow.md)
 - [Bias vs Variance](bias-vs-variance.md)
 - [Regularization](regularization.md)
+- [Cross-Validation](cross-validation.md)
 - [Feature Engineering](feature-engineering.md)

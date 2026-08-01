@@ -22,7 +22,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [ML Workflow](machine-learning/ml-workflow.md)
 - [x] [Bias vs Variance](machine-learning/bias-vs-variance.md)
 - [x] [Regularization](machine-learning/regularization.md)
-- [ ] Cross-Validation
+- [x] [Cross-Validation](machine-learning/cross-validation.md)
 - [ ] Ensemble Methods
 - [x] [Feature Engineering](machine-learning/feature-engineering.md)
 
