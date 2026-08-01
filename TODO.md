@@ -14,3 +14,7 @@ A running backlog of chapters or topics that shipped with a known limitation, an
 
 - **[Kubernetes](mlops/kubernetes.md)** — YAML verified against current docs but never deployed against a live cluster; deliberately skipped since spinning up `minikube` would cost several minutes and real CPU/memory on this shared host. Revisit with an actual deployment if that cost becomes acceptable.
 - **[CI/CD](mlops/ci-cd.md)** — YAML verified against current GitHub Actions docs but never run as a live workflow; deliberately not added to this repo's own `.github/workflows/`, since that would be infrastructure scope creep beyond writing the chapter. Revisit in a throwaway repo or sandbox if a live run is ever wanted.
+
+## RAG
+
+- **[Vector Databases](vector-databases/vector-databases.md)** — the example verifies the core ANN indexing mechanism directly (`hnswlib`), but never touches what actually makes something a *database*: metadata filtering, persistence, a real server product (Pinecone, Qdrant, Weaviate, Milvus). Revisit with an actual vector database product to demonstrate those parts, not just the underlying index algorithm.
