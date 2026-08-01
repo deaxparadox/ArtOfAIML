@@ -40,7 +40,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Data Visualization
 
-- [ ] Matplotlib
+- [x] Matplotlib
 - [ ] Plotly
 
 ---

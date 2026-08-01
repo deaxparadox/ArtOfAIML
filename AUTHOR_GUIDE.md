@@ -100,6 +100,8 @@ Default to a Mermaid diagram whenever a workflow, architecture, pipeline, lifecy
 
 Prefer a diagram over several paragraphs whenever one exists that would replace them.
 
+**Rendered plots** (e.g. Matplotlib, Plotly output) are a separate case from diagrams: save the image to an `assets/` subfolder alongside the chapter, named descriptively (`assets/matplotlib-bias-variance-fit.png`), and embed it with a real alt-text description of what it shows.
+
 ---
 
 # GitHub Markdown
