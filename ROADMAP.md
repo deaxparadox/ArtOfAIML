@@ -23,7 +23,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Bias vs Variance](machine-learning/bias-vs-variance.md)
 - [x] [Regularization](machine-learning/regularization.md)
 - [x] [Cross-Validation](machine-learning/cross-validation.md)
-- [ ] Ensemble Methods
+- [x] [Ensemble Methods](machine-learning/ensemble-methods.md)
 - [x] [Feature Engineering](machine-learning/feature-engineering.md)
 
 ## Statistics

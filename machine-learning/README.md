@@ -15,4 +15,5 @@ This folder covers the foundational concepts of machine learning: what it is, wh
 - [Bias vs Variance](bias-vs-variance.md)
 - [Regularization](regularization.md)
 - [Cross-Validation](cross-validation.md)
+- [Ensemble Methods](ensemble-methods.md)
 - [Feature Engineering](feature-engineering.md)
