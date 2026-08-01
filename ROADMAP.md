@@ -22,7 +22,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] Mean
 - [x] Median
-- [ ] Mode
+- [x] Mode
 - [ ] Variance
 - [ ] Standard Deviation
 - [ ] Probability
