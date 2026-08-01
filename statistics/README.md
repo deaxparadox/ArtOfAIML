@@ -5,3 +5,4 @@ This folder covers the statistical foundations used throughout the rest of this 
 ## Chapters
 
 - [Mean](mean.md)
+- [Median](median.md)

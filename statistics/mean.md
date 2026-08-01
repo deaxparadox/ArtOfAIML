@@ -12,7 +12,7 @@ Raw data — thousands of individual values — isn't directly actionable. A sin
 
 The mean specifically earned its default status because of a mathematical property, not just convenience: it's the single number that minimizes the total squared distance to every point in the dataset. That's not a coincidence — it's exactly why "always predict the average" is the standard baseline mentioned in [ML Workflow](../machine-learning/ml-workflow.md#common-mistakes), and why models trained to minimize squared error (like the `LinearRegression` example in [What is Machine Learning](../machine-learning/what-is-machine-learning.md)) are, in effect, learning a conditional mean.
 
-**When the mean is the right summary, and when it isn't:** it works well when data is roughly symmetric and outlier-free. It becomes misleading on skewed data or data with extreme values, because a handful of extreme points can drag it far from where most of the data actually sits — the next chapter on the median covers the alternative for exactly that case.
+**When the mean is the right summary, and when it isn't:** it works well when data is roughly symmetric and outlier-free. It becomes misleading on skewed data or data with extreme values, because a handful of extreme points can drag it far from where most of the data actually sits — [the median](median.md) is the alternative for exactly that case.
 
 ## How does it work?
 
@@ -36,7 +36,7 @@ mean_with_outlier = sum(salaries_with_outlier) / len(salaries_with_outlier)
 print(mean_with_outlier)  # -> 138200.0
 ```
 
-Adding a single value nearly triples the reported average, even though four of the five people still earn between 45,000 and 51,000. The mean isn't wrong here — 138,200 genuinely is the arithmetic average — but it's a poor answer to "what does a typical employee earn?" (The median of this same group is 48,000, much closer to what most people would call "typical" — covered in the next chapter.)
+Adding a single value nearly triples the reported average, even though four of the five people still earn between 45,000 and 51,000. The mean isn't wrong here — 138,200 genuinely is the arithmetic average — but it's a poor answer to "what does a typical employee earn?" ([The median](median.md) of this same group is 48,000, much closer to what most people would call "typical".)
 
 ## Where is it used?
 
