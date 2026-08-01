@@ -33,7 +33,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Mode](statistics/mode.md)
 - [x] [Variance](statistics/variance.md)
 - [x] [Standard Deviation](statistics/standard-deviation.md)
-- [ ] Normal Distribution
+- [x] [Normal Distribution](statistics/normal-distribution.md)
 - [x] [Probability](statistics/probability.md)
 - [x] [Bayes Theorem](statistics/bayes-theorem.md)
 - [ ] Correlation vs Causation

@@ -9,5 +9,6 @@ This folder covers the statistical foundations used throughout the rest of this 
 - [Mode](mode.md)
 - [Variance](variance.md)
 - [Standard Deviation](standard-deviation.md)
+- [Normal Distribution](normal-distribution.md)
 - [Probability](probability.md)
 - [Bayes Theorem](bayes-theorem.md)
