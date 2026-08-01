@@ -16,7 +16,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Types of Machine Learning](machine-learning/types-of-machine-learning.md)
 - [x] [Supervised Learning](machine-learning/supervised-learning.md)
 - [x] [Unsupervised Learning](machine-learning/unsupervised-learning.md)
-- [ ] Semi-Supervised Learning
+- [x] [Semi-Supervised Learning](machine-learning/semi-supervised-learning.md)
 - [ ] Reinforcement Learning
 - [ ] Self-Supervised Learning
 - [x] [ML Workflow](machine-learning/ml-workflow.md)
