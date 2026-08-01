@@ -12,7 +12,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Machine Learning
 
-- [ ] What is Machine Learning
+- [x] What is Machine Learning
 - [ ] Types of Machine Learning
 - [ ] ML Workflow
 - [ ] Bias vs Variance
