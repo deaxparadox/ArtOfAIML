@@ -60,7 +60,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Foundations
 
-- [ ] Transformers
+- [x] Transformers
 - [ ] Attention
 - [ ] Prompt Engineering
 
