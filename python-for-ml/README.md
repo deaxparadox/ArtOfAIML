@@ -5,3 +5,4 @@ This folder covers the Python libraries used throughout the rest of this handboo
 ## Chapters
 
 - [NumPy](numpy.md)
+- [Pandas](pandas.md)
