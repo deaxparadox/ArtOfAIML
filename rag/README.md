@@ -10,3 +10,4 @@ This folder covers Retrieval-Augmented Generation: giving a language model acces
 - [Retrieval](retrieval.md)
 - [Reranking](reranking.md)
 - [Evaluation](evaluation.md)
+- [Agentic RAG](agentic-rag.md)

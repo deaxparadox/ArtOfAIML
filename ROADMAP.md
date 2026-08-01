@@ -93,7 +93,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Vector Databases](vector-databases/vector-databases.md)
 - [x] [Reranking](rag/reranking.md)
 - [x] [Evaluation](rag/evaluation.md)
-- [ ] Agentic RAG
+- [x] [Agentic RAG](rag/agentic-rag.md)
 
 ---
 
