@@ -14,8 +14,16 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] [What is Machine Learning](machine-learning/what-is-machine-learning.md)
 - [x] [Types of Machine Learning](machine-learning/types-of-machine-learning.md)
+- [ ] Supervised Learning
+- [ ] Unsupervised Learning
+- [ ] Semi-Supervised Learning
+- [ ] Reinforcement Learning
+- [ ] Self-Supervised Learning
 - [x] [ML Workflow](machine-learning/ml-workflow.md)
 - [x] [Bias vs Variance](machine-learning/bias-vs-variance.md)
+- [ ] Regularization
+- [ ] Cross-Validation
+- [ ] Ensemble Methods
 - [x] [Feature Engineering](machine-learning/feature-engineering.md)
 
 ## Statistics
@@ -25,8 +33,11 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Mode](statistics/mode.md)
 - [x] [Variance](statistics/variance.md)
 - [x] [Standard Deviation](statistics/standard-deviation.md)
+- [ ] Normal Distribution
 - [x] [Probability](statistics/probability.md)
 - [x] [Bayes Theorem](statistics/bayes-theorem.md)
+- [ ] Correlation vs Causation
+- [ ] Hypothesis Testing / Confidence Intervals
 
 ---
 
