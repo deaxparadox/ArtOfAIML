@@ -43,6 +43,8 @@ Avoid unnecessary complexity.
 
 The goal is not just to explain what something is and how it works. Every chapter should also help the reader answer: **how would an experienced engineer think about this?** That means surfacing why it was built, what it's traded off against, and what actually goes wrong with it in production — not just the mechanism.
 
+Many topics naturally involve choosing between competing approaches. When a topic genuinely involves a decision like that, explain how an experienced engineer would think it through: when to use it, when to avoid it, what trade-off is being accepted, and what would change the decision. The goal is to build the reader's judgment, not to hand them a recommendation. If a topic doesn't involve a real decision, don't invent one just to cover this point.
+
 Write conversationally, as one engineer explaining a topic to another — not like reference documentation. The reader should feel guided, not lectured.
 
 ---
@@ -140,3 +142,4 @@ Before finishing a chapter verify:
 - Production considerations describe real failure modes, not a generic checklist
 - Interview questions (when applicable) are grouped Basic / Intermediate / Advanced
 - Any engineering-intuition observation present is genuine, not manufactured to fill a quota
+- Where a topic involves a real decision between approaches, the chapter explains how an experienced engineer would reason through it — without inventing a decision where none exists
