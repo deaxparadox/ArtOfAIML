@@ -5,3 +5,4 @@ This folder covers embeddings as a foundational concept: how meaning gets repres
 ## Chapters
 
 - [Embeddings](embeddings.md)
+- [Similarity](similarity.md)
