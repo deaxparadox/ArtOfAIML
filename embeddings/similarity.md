@@ -61,7 +61,7 @@ Semantic search (ranking documents by similarity to a query embedding), recommen
 
 - **A high score doesn't guarantee two things are similar in the way that matters for the task** — it only reflects what the embedding model itself learned to place close together, already flagged as a limitation in [Embeddings](embeddings.md).
 - **Choosing the wrong metric for the embedding it's applied to produces a silent error.** A metric that assumes normalized vectors, applied to vectors that aren't, can flip a ranking exactly the way the example above shows, without any warning.
-- **Similarity alone doesn't scale to searching millions of vectors efficiently.** Computing it against every candidate one at a time is fine for a handful of items, and becomes the exact bottleneck the handbook's later vector databases section exists to solve.
+- **Similarity alone doesn't scale to searching millions of vectors efficiently.** Computing it against every candidate one at a time is fine for a handful of items, and becomes the exact bottleneck [Vector Databases](../vector-databases/vector-databases.md) exists to solve.
 
 ## Production considerations
 

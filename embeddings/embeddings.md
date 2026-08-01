@@ -75,7 +75,7 @@ Semantic search and retrieval — finding documents by meaning rather than exact
 ## Production considerations
 
 - **Embeddings must be generated consistently, at indexing time and query time, with the exact same model and version.** Comparing an embedding from one model version against one from another produces numbers that aren't meaningfully comparable at all — and nothing about the comparison errors out to warn you.
-- **Storing and searching embeddings at scale is its own infrastructure problem**, covered directly in the vector databases chapter later in this handbook.
+- **Storing and searching embeddings at scale is its own infrastructure problem**, covered directly in [Vector Databases](../vector-databases/vector-databases.md).
 - **Embedding generation has a real, ongoing cost** — compute for a self-hosted model, or an API cost for a hosted embedding service — that scales with data volume, worth budgeting for explicitly the same way token costs matter for [Tokenization](../nlp/tokenization.md).
 
 ## Common mistakes
