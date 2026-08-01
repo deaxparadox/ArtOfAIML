@@ -90,7 +90,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 # Phase 7 — Production AI
 
 - [x] FastAPI
-- [ ] Docker
+- [x] Docker
 - [ ] Kubernetes
 - [ ] CI/CD
 - [ ] Observability

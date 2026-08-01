@@ -5,3 +5,4 @@ This folder covers deploying and operating AI systems in production: serving a m
 ## Chapters
 
 - [FastAPI](fastapi.md)
+- [Docker](docker.md)
