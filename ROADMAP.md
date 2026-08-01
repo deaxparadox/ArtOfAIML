@@ -15,7 +15,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [What is Machine Learning](machine-learning/what-is-machine-learning.md)
 - [x] [Types of Machine Learning](machine-learning/types-of-machine-learning.md)
 - [x] [Supervised Learning](machine-learning/supervised-learning.md)
-- [ ] Unsupervised Learning
+- [x] [Unsupervised Learning](machine-learning/unsupervised-learning.md)
 - [ ] Semi-Supervised Learning
 - [ ] Reinforcement Learning
 - [ ] Self-Supervised Learning
