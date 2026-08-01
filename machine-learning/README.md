@@ -8,3 +8,4 @@ This folder covers the foundational concepts of machine learning: what it is, wh
 - [Types of Machine Learning](types-of-machine-learning.md)
 - [ML Workflow](ml-workflow.md)
 - [Bias vs Variance](bias-vs-variance.md)
+- [Feature Engineering](feature-engineering.md)

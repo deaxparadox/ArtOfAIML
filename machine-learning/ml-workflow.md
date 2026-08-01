@@ -46,7 +46,7 @@ Experienced teams still follow this sequence today, even under deadline pressure
 
 **3. Exploratory data analysis (EDA)** — inspect the data before touching a model: distributions, missing values, obvious errors, class imbalance. EDA exists to catch data problems before they get baked into a model.
 
-**4. Feature engineering** — transform raw data into the inputs a model actually trains on (covered in more depth in a later chapter).
+**4. Feature engineering** — transform raw data into the inputs a model actually trains on, covered in depth in [Feature Engineering](feature-engineering.md).
 
 **5. Model training** — fit a model (or several candidate models) to the training data, as shown in the code examples in [What is Machine Learning](what-is-machine-learning.md) and [Types of Machine Learning](types-of-machine-learning.md).
 
