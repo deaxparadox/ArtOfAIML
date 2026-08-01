@@ -276,7 +276,21 @@ Large repositories should evolve incrementally.
 
 ---
 
-# 10. Decision Rules
+# 10. Content Backlog
+
+Chapters can ship with a known limitation, an honestly-reported messy result, or something not verified as fully as it ideally would be (e.g. a live cluster or workflow deliberately not run due to cost).
+
+When that happens:
+
+- Log it in `TODO.md` at the project root — the topic, what's incomplete, and why.
+- Do not let a known gap disappear into a commit message alone; `TODO.md` is what makes it findable later without digging through git history.
+- Remove an entry once it's actually revisited and resolved. `TODO.md` is a live backlog, not a permanent record.
+
+This is not a general changelog. Most chapters need no entry at all — this is specifically for the exceptions worth revisiting.
+
+---
+
+# 11. Decision Rules
 
 When multiple valid approaches exist:
 
@@ -294,7 +308,7 @@ If two rules conflict:
 
 ---
 
-# 11. Quality Gate
+# 12. Quality Gate
 
 Before considering work complete, verify:
 
@@ -308,6 +322,7 @@ Before considering work complete, verify:
 - No placeholders
 - No fabricated information
 - No AI-style filler or unnecessary verbosity
+- Any known limitation or unresolved gap is logged in `TODO.md`
 
 If any item fails, improve the content before considering the task complete.
 
