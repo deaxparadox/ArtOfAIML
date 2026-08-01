@@ -69,7 +69,7 @@ NumPy and pandas disagree on the *default* — `numpy.var` assumes population va
 
 ## Limitations
 
-- **Its units are squared**, which makes it hard to interpret directly — "the variance in delivery time is 25 minutes²" doesn't mean much on its own. Standard deviation (the next chapter) exists specifically to undo this.
+- **Its units are squared**, which makes it hard to interpret directly — "the variance in delivery time is 25 minutes²" doesn't mean much on its own. [Standard deviation](standard-deviation.md) exists specifically to undo this.
 - **Even more sensitive to outliers than the mean.** Because deviations are squared, one extreme value contributes disproportionately more to variance than it does to the mean.
 - **Treats spread above and below the mean identically.** If what actually matters is downside risk specifically — a latency spike, a financial loss — variance alone doesn't distinguish "spread that hurts" from "spread that doesn't."
 

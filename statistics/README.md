@@ -8,3 +8,4 @@ This folder covers the statistical foundations used throughout the rest of this 
 - [Median](median.md)
 - [Mode](mode.md)
 - [Variance](variance.md)
+- [Standard Deviation](standard-deviation.md)
