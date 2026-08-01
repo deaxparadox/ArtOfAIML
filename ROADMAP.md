@@ -49,7 +49,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## NLP Fundamentals
 
-- [ ] Tokenization
+- [x] Tokenization
 - [ ] Text Cleaning
 - [ ] Embeddings
 - [ ] Similarity
