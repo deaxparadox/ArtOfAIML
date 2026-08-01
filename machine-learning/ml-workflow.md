@@ -90,6 +90,7 @@ This workflow applies across essentially every ML project, regardless of domain 
 ## Production considerations
 
 - **Reproducibility** — every step (data version, feature transformations, model version) needs to be re-creatable, not just the final model file; without this, debugging a production regression means guessing which upstream change caused it.
+- **Data versioning and experiment tracking** — knowing which exact snapshot of the training data, which hyperparameters, and which resulting metrics produced a specific model is what makes "why did this model behave differently after retraining" an answerable question instead of a guess. Without it, two models that look identical in code can silently be different, because they were trained on different data or settings nobody recorded.
 - **Handoffs between roles** — data engineers, ML engineers, and business stakeholders typically own different stages; unclear ownership at the boundaries (e.g. "who owns feature definitions?") is a common, recurring source of production bugs that looks like a modeling problem but isn't.
 - **Automation over time** — early on, most steps are manual and exploratory; in a mature production system, steps 2 through 8 are usually automated into a pipeline that reruns on a schedule or trigger, and that automation itself becomes something that needs monitoring.
 
