@@ -6,10 +6,13 @@ See [What is Machine Learning](what-is-machine-learning.md) for the base definit
 
 Machine learning problems are grouped into a few broad categories, based on what kind of feedback the training data provides:
 
-- **Supervised learning** — the training data includes the correct answer for each example (a **label**). The model learns to map input to that known answer.
-- **Unsupervised learning** — the training data has no labels. The model finds structure in the data on its own, such as grouping similar examples together.
-- **Semi-supervised learning** — most of the training data is unlabeled, with only a small labeled subset. The model uses both.
-- **Reinforcement learning** — there's no fixed dataset at all. An agent takes actions in an environment and learns from a reward signal that tells it how good or bad the outcome was.
+- **[Supervised learning](supervised-learning.md)** — the training data includes the correct answer for each example (a **label**). The model learns to map input to that known answer.
+- **[Unsupervised learning](unsupervised-learning.md)** — the training data has no labels. The model finds structure in the data on its own, such as grouping similar examples together.
+- **[Semi-supervised learning](semi-supervised-learning.md)** — most of the training data is unlabeled, with only a small labeled subset. The model uses both.
+- **[Reinforcement learning](reinforcement-learning.md)** — there's no fixed dataset at all. An agent takes actions in an environment and learns from a reward signal that tells it how good or bad the outcome was.
+- **[Self-supervised learning](self-supervised-learning.md)** — the model generates its own labels directly from unlabeled data, by hiding part of the input and learning to predict the hidden part.
+
+Each category is covered in depth in its own chapter, linked above — this chapter is the map, not the destination.
 
 Think of the difference this way: supervised learning is studying with an answer key, unsupervised learning is sorting a pile of photos into groups with no captions to guide you, and reinforcement learning is learning to ride a bike — nobody labels each movement "correct" or "incorrect," you just feel the outcome (staying upright or falling) and adjust.
 
@@ -17,7 +20,9 @@ Think of the difference this way: supervised learning is studying with an answer
 flowchart TD
     A[Training feedback available?] --> B{Labeled examples?}
     B -->|All examples labeled| C[Supervised Learning]
-    B -->|No labels| D[Unsupervised Learning]
+    B -->|No labels| D{Can labels be extracted from the data itself?}
+    D -->|Yes, e.g. next word in text| H[Self-supervised Learning]
+    D -->|No| I[Unsupervised Learning]
     B -->|Few labels, mostly unlabeled| E[Semi-supervised Learning]
     A --> F{Reward signal from actions?}
     F -->|Yes, no fixed dataset| G[Reinforcement Learning]
@@ -44,7 +49,7 @@ Beginners often assume these are the same problem with a different output type. 
 
 **Unsupervised learning**, most commonly, finds structure by clustering similar points together — no target to predict, no per-example "correct" grouping to check against.
 
-**Reinforcement learning** is structurally different from both: instead of fitting a model to a fixed dataset, an agent repeatedly takes an action, observes a reward, and updates its strategy based on that reward. It's covered in more depth later in this handbook, once agent architecture has been introduced.
+**Reinforcement learning** is structurally different from both: instead of fitting a model to a fixed dataset, an agent repeatedly takes an action, observes a reward, and updates its strategy based on that reward — see [Reinforcement Learning](reinforcement-learning.md) for a real, from-scratch agent learning exactly this way. **Self-supervised learning** turns unlabeled data into its own training signal by hiding part of it and predicting the hidden part — see [Self-Supervised Learning](self-supervised-learning.md), including why it's the mechanism behind pretraining an LLM.
 
 ## Example
 
@@ -90,6 +95,7 @@ print(kmeans.cluster_centers_)  # -> [[10. 2.] [1. 2.]]
 - **Unsupervised** — customer segmentation, anomaly detection, topic discovery in documents.
 - **Semi-supervised** — situations where labeling is expensive, such as medical images, where a small labeled set is combined with a large unlabeled one.
 - **Reinforcement learning** — game-playing agents, robotics, resource allocation, recommendation systems optimizing for long-term engagement.
+- **Self-supervised learning** — pretraining large language models on raw text, pretraining vision models on unlabeled images.
 
 ## Advantages
 
