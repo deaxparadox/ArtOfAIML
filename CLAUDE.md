@@ -134,6 +134,8 @@ Never invent:
 
 If something cannot be verified, say so explicitly.
 
+For library- or API-specific code examples, check current version-specific documentation (e.g. via context7) before writing from memory. Fall back to general web search for non-library questions (architecture, comparisons, trade-offs).
+
 ---
 
 ## 4.4 Technical Integrity
@@ -178,6 +180,7 @@ When generating new content:
 - Do not generate future chapters.
 - Do not expand the roadmap.
 - Follow `AUTHOR_GUIDE.md`.
+- Do not begin writing until the topic, destination folder, and scope have been explicitly confirmed in conversation.
 
 ---
 
@@ -189,6 +192,7 @@ When modifying an existing chapter:
 - Preserve structure whenever possible.
 - Improve clarity instead of rewriting unnecessarily.
 - Maintain consistency with neighboring chapters.
+- When correcting a technical error, fix the underlying misunderstanding — not just the specific sentence or wording that was flagged.
 
 ---
 
@@ -264,7 +268,15 @@ Large repositories should evolve incrementally.
 
 ---
 
-# 9. Decision Rules
+# 9. Version Control
+
+- Never force-push, rewrite published history, or delete branches without being explicitly asked.
+- Commit to the current branch by default. Do not create, switch, or merge branches unless asked.
+- Commit messages should explain why a chapter was added or changed, not just restate the filename.
+
+---
+
+# 10. Decision Rules
 
 When multiple valid approaches exist:
 
@@ -282,7 +294,7 @@ If two rules conflict:
 
 ---
 
-# 10. Quality Gate
+# 11. Quality Gate
 
 Before considering work complete, verify:
 
