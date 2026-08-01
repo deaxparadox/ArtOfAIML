@@ -51,7 +51,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] Tokenization
 - [x] Text Cleaning
-- [ ] Embeddings
+- [x] Embeddings
 - [ ] Similarity
 
 ---
