@@ -20,7 +20,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Statistics
 
-- [ ] Mean
+- [x] Mean
 - [ ] Median
 - [ ] Mode
 - [ ] Variance
