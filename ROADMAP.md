@@ -77,7 +77,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Attention](llms/attention.md)
 - [x] [Context Window / Context Length](llms/context-window.md)
 - [x] [Prompt Engineering](llms/prompt-engineering.md)
-- [ ] Fine-Tuning
+- [x] [Fine-Tuning](llms/fine-tuning.md)
 - [ ] LLM Evaluation / Benchmarks
 
 ---
