@@ -63,6 +63,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] [Tokenization](nlp/tokenization.md)
 - [x] [Text Cleaning](nlp/text-cleaning.md)
+- [x] [TF-IDF / Bag-of-Words](nlp/tfidf-bag-of-words.md)
 - [x] [Embeddings](embeddings/embeddings.md) (lives in `embeddings/` — see Placement Rules)
 - [x] [Similarity](embeddings/similarity.md) (lives in `embeddings/` — see Placement Rules)
 
