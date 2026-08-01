@@ -6,3 +6,4 @@ This folder covers the Python libraries used throughout the rest of this handboo
 
 - [NumPy](numpy.md)
 - [Pandas](pandas.md)
+- [Polars](polars.md)

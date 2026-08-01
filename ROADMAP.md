@@ -36,7 +36,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] NumPy
 - [x] Pandas
-- [ ] Polars
+- [x] Polars
 
 ## Data Visualization
 
