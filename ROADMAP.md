@@ -73,7 +73,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] What is RAG
 - [x] Chunking
 - [x] Retrieval
-- [ ] Reranking
+- [x] Reranking
 - [ ] Evaluation
 
 ---
