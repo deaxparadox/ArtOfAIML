@@ -71,7 +71,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 ## Retrieval Augmented Generation
 
 - [x] What is RAG
-- [ ] Chunking
+- [x] Chunking
 - [ ] Retrieval
 - [ ] Reranking
 - [ ] Evaluation

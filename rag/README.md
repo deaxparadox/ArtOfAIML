@@ -5,3 +5,4 @@ This folder covers Retrieval-Augmented Generation: giving a language model acces
 ## Chapters
 
 - [What is RAG](what-is-rag.md)
+- [Chunking](chunking.md)
