@@ -8,3 +8,4 @@ Chapters that include a rendered plot store the image in `assets/`, alongside th
 
 - [Matplotlib](matplotlib.md)
 - [Plotly](plotly.md)
+- [Seaborn](seaborn.md)

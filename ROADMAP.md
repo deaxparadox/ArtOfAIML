@@ -53,6 +53,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] [Matplotlib](data-visualization/matplotlib.md)
 - [x] [Plotly](data-visualization/plotly.md)
+- [x] [Seaborn](data-visualization/seaborn.md)
 
 ---
 
