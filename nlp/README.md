@@ -5,3 +5,4 @@ This folder covers the fundamentals of processing text as data — turning raw l
 ## Chapters
 
 - [Tokenization](tokenization.md)
+- [Text Cleaning](text-cleaning.md)
