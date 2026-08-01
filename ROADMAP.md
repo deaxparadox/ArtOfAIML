@@ -17,7 +17,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Supervised Learning](machine-learning/supervised-learning.md)
 - [x] [Unsupervised Learning](machine-learning/unsupervised-learning.md)
 - [x] [Semi-Supervised Learning](machine-learning/semi-supervised-learning.md)
-- [ ] Reinforcement Learning
+- [x] [Reinforcement Learning](machine-learning/reinforcement-learning.md)
 - [ ] Self-Supervised Learning
 - [x] [ML Workflow](machine-learning/ml-workflow.md)
 - [x] [Bias vs Variance](machine-learning/bias-vs-variance.md)
