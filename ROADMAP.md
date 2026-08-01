@@ -93,7 +93,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] Docker
 - [x] Kubernetes
 - [x] CI/CD
-- [ ] Observability
+- [x] Observability
 
 ---
 

@@ -8,3 +8,4 @@ This folder covers deploying and operating AI systems in production: serving a m
 - [Docker](docker.md)
 - [Kubernetes](kubernetes.md)
 - [CI/CD](ci-cd.md)
+- [Observability](observability.md)
