@@ -13,3 +13,4 @@ This folder covers the statistical foundations used throughout the rest of this 
 - [Probability](probability.md)
 - [Bayes Theorem](bayes-theorem.md)
 - [Correlation vs Causation](correlation-vs-causation.md)
+- [Hypothesis Testing / Confidence Intervals](hypothesis-testing-confidence-intervals.md)

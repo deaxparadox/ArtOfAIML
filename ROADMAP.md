@@ -37,7 +37,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Probability](statistics/probability.md)
 - [x] [Bayes Theorem](statistics/bayes-theorem.md)
 - [x] [Correlation vs Causation](statistics/correlation-vs-causation.md)
-- [ ] Hypothesis Testing / Confidence Intervals
+- [x] [Hypothesis Testing / Confidence Intervals](statistics/hypothesis-testing-confidence-intervals.md)
 
 ---
 
