@@ -12,21 +12,21 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Machine Learning
 
-- [x] What is Machine Learning
-- [x] Types of Machine Learning
-- [x] ML Workflow
-- [x] Bias vs Variance
-- [x] Feature Engineering
+- [x] [What is Machine Learning](machine-learning/what-is-machine-learning.md)
+- [x] [Types of Machine Learning](machine-learning/types-of-machine-learning.md)
+- [x] [ML Workflow](machine-learning/ml-workflow.md)
+- [x] [Bias vs Variance](machine-learning/bias-vs-variance.md)
+- [x] [Feature Engineering](machine-learning/feature-engineering.md)
 
 ## Statistics
 
-- [x] Mean
-- [x] Median
-- [x] Mode
-- [x] Variance
-- [x] Standard Deviation
-- [x] Probability
-- [x] Bayes Theorem
+- [x] [Mean](statistics/mean.md)
+- [x] [Median](statistics/median.md)
+- [x] [Mode](statistics/mode.md)
+- [x] [Variance](statistics/variance.md)
+- [x] [Standard Deviation](statistics/standard-deviation.md)
+- [x] [Probability](statistics/probability.md)
+- [x] [Bayes Theorem](statistics/bayes-theorem.md)
 
 ---
 
@@ -34,14 +34,14 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Python for ML
 
-- [x] NumPy
-- [x] Pandas
-- [x] Polars
+- [x] [NumPy](python-for-ml/numpy.md)
+- [x] [Pandas](python-for-ml/pandas.md)
+- [x] [Polars](python-for-ml/polars.md)
 
 ## Data Visualization
 
-- [x] Matplotlib
-- [x] Plotly
+- [x] [Matplotlib](data-visualization/matplotlib.md)
+- [x] [Plotly](data-visualization/plotly.md)
 
 ---
 
@@ -49,10 +49,10 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## NLP Fundamentals
 
-- [x] Tokenization
-- [x] Text Cleaning
-- [x] Embeddings
-- [x] Similarity
+- [x] [Tokenization](nlp/tokenization.md)
+- [x] [Text Cleaning](nlp/text-cleaning.md)
+- [x] [Embeddings](embeddings/embeddings.md) (lives in `embeddings/` — see Placement Rules)
+- [x] [Similarity](embeddings/similarity.md) (lives in `embeddings/` — see Placement Rules)
 
 ---
 
@@ -60,9 +60,9 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Foundations
 
-- [x] Transformers
-- [x] Attention
-- [x] Prompt Engineering
+- [x] [Transformers](llms/transformers.md)
+- [x] [Attention](llms/attention.md)
+- [x] [Prompt Engineering](llms/prompt-engineering.md)
 
 ---
 
@@ -70,30 +70,30 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ## Retrieval Augmented Generation
 
-- [x] What is RAG
-- [x] Chunking
-- [x] Retrieval
-- [x] Reranking
-- [x] Evaluation
+- [x] [What is RAG](rag/what-is-rag.md)
+- [x] [Chunking](rag/chunking.md)
+- [x] [Retrieval](rag/retrieval.md)
+- [x] [Reranking](rag/reranking.md)
+- [x] [Evaluation](rag/evaluation.md)
 
 ---
 
 # Phase 6 — Agents
 
-- [x] Agent Architecture
-- [x] LangGraph
-- [x] Tool Calling
-- [x] Multi-Agent Systems
+- [x] [Agent Architecture](agents/agent-architecture.md)
+- [x] [LangGraph](agents/langgraph.md)
+- [x] [Tool Calling](agents/tool-calling.md)
+- [x] [Multi-Agent Systems](agents/multi-agent-systems.md)
 
 ---
 
 # Phase 7 — Production AI
 
-- [x] FastAPI
-- [x] Docker
-- [x] Kubernetes
-- [x] CI/CD
-- [x] Observability
+- [x] [FastAPI](mlops/fastapi.md) (lives in `mlops/` — see Placement Rules)
+- [x] [Docker](mlops/docker.md) (lives in `mlops/` — see Placement Rules)
+- [x] [Kubernetes](mlops/kubernetes.md) (lives in `mlops/` — see Placement Rules)
+- [x] [CI/CD](mlops/ci-cd.md) (lives in `mlops/` — see Placement Rules)
+- [x] [Observability](mlops/observability.md) (lives in `mlops/` — see Placement Rules)
 
 ---
 
