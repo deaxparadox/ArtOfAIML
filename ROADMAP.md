@@ -97,6 +97,29 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ---
 
+# Placement Rules
+
+These rules apply when a proposed topic does not map cleanly to exactly one existing folder listed in `README.md`.
+
+## No Home
+
+If a topic does not fit any existing folder:
+
+- Do not invent a new folder or category.
+- Explain why it doesn't fit the current structure.
+- Ask the user to decide whether to add a new folder or reshape an existing one.
+
+## Multiple Homes
+
+If a topic fits more than one existing folder:
+
+- Write the full explanation once, in the folder representing its primary mechanism or origin, not its downstream use.
+- Reference it from the other relevant folders using relative Markdown links.
+- Do not duplicate the explanation across folders.
+- If it's unclear which folder is primary, explain the tradeoff and ask instead of guessing.
+
+---
+
 # Notes
 
 - This file defines repository structure.
