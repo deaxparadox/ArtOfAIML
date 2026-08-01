@@ -5,3 +5,4 @@ This folder covers agentic systems: using an LLM to decide what actions to take,
 ## Chapters
 
 - [Agent Architecture](agent-architecture.md)
+- [LangGraph](langgraph.md)

@@ -81,7 +81,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 # Phase 6 — Agents
 
 - [x] Agent Architecture
-- [ ] LangGraph
+- [x] LangGraph
 - [ ] Tool Calling
 - [ ] Multi-Agent Systems
 
