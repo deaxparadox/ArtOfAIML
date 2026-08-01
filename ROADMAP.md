@@ -92,7 +92,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] FastAPI
 - [x] Docker
 - [x] Kubernetes
-- [ ] CI/CD
+- [x] CI/CD
 - [ ] Observability
 
 ---
