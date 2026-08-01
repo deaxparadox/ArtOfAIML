@@ -22,7 +22,7 @@ flowchart LR
     end
 ```
 
-A model is the learned function. Once trained, it takes input it has never seen before and produces a prediction, based on the patterns it found in the training data.
+Think of a model as a mathematical function that was learned from examples, rather than one a person sat down and wrote. Once trained, it takes input it has never seen before and produces a prediction, based on the patterns it found in the training data.
 
 ## Why does it exist?
 
@@ -37,6 +37,8 @@ This became practical once two things arrived together:
 - **Data availability** — digital systems now generate large amounts of labeled and unlabeled data.
 - **Compute availability** — training that used to take days now takes minutes, due to cheaper storage and faster hardware (notably GPUs).
 
+**When to reach for ML, and when not to.** If a problem can be solved with a clear, stable set of rules — tax bracket calculations, unit conversions, form validation — write the rules. They're easier to test, debug, and explain than a model, and they don't need training data at all. ML earns its cost (data collection, training, ongoing monitoring) only when the rules themselves are the hard part: too many exceptions, too much drift over time, or too subtle a pattern for a person to state explicitly. If you can write the rule in a sentence, you probably don't need ML yet.
+
 ## How does it work?
 
 Every ML system follows the same basic loop:
@@ -47,7 +49,11 @@ Every ML system follows the same basic loop:
 4. **Use the model** — deploy it to make predictions on new, real-world input.
 5. **Monitor and retrain** — real-world data changes over time, so the model is re-evaluated and retrained periodically.
 
-Here's a minimal example: predicting a house's price from its size, using scikit-learn's `LinearRegression`.
+This loop, and the practical steps within each stage, are covered in full in [ML Workflow](ml-workflow.md).
+
+## Example
+
+Predicting a house's price from its size, using scikit-learn's `LinearRegression`.
 
 ```python
 import numpy as np
@@ -62,12 +68,12 @@ model.fit(X, y)
 
 # Predict the price of a 90 square meter house
 predicted_price = model.predict(np.array([[90]]))
-print(predicted_price)  # -> roughly 254 (i.e. $254,000)
+print(predicted_price)  # -> [253.977...] (roughly $254,000)
 ```
 
 `model.fit(X, y)` is where learning happens: the algorithm finds the line that best fits the training examples. `model.predict(...)` applies that learned relationship to new input.
 
-This example is intentionally simple — one algorithm (linear regression) on one type of problem (predicting a number). Other problems need different algorithms; the categories of problems and algorithms are covered in later chapters.
+This example is intentionally simple — one algorithm (linear regression) on one type of problem (predicting a number). Other problems need different algorithms; the categories of problems and algorithms are covered in [Types of Machine Learning](types-of-machine-learning.md).
 
 ## Where is it used?
 
@@ -98,27 +104,34 @@ ML is used wherever a system needs to make decisions or predictions from pattern
 
 ## Production considerations
 
-Building a working model in a notebook is different from running ML in production. Production systems need:
-
-- **Data pipelines** — reliable, versioned data feeding the model, both for training and for live predictions.
-- **Model versioning** — tracking which model version produced which prediction, so results are reproducible.
-- **Monitoring for drift** — detecting when real-world input starts to diverge from training data, since accuracy degrades silently otherwise.
-- **A retraining strategy** — deciding how often, and on what trigger, the model gets retrained.
+- **Data pipelines** — reliable, versioned data feeding the model, both for training and for live predictions; a broken upstream pipeline often shows up as "the model got worse" when the model didn't change at all.
+- **Model versioning** — tracking which model version produced which prediction, so results are reproducible when something needs to be debugged after the fact.
+- **Monitoring for drift** — detecting when real-world input starts to diverge from training data. This matters because accuracy doesn't throw an error when it degrades — it just quietly gets worse, and nothing alerts you unless you're watching for it.
+- **A retraining strategy** — deciding how often, and on what trigger, the model gets retrained, rather than retraining reactively once someone notices a problem.
 - **Latency and scale requirements** — a fraud-detection model scoring transactions in real time has very different constraints from a monthly demand forecast.
 - **A clear evaluation metric tied to the business outcome** — a model can score well statistically and still fail to move the metric the business actually cares about.
 
 ## Common mistakes
 
 - **Reaching for ML before checking if a simpler rule-based solution works.** ML adds real cost — data collection, training, monitoring — and isn't the default choice for every problem.
+- **Assuming a better algorithm is the fix for a mediocre model.** Beginners often reach for a fancier algorithm first. In practice, improving data quality — fixing mislabeled examples, adding more representative cases — usually moves the needle further than switching models, and it's often cheaper too.
 - **Skipping a baseline.** Without comparing to a simple baseline (e.g. always predicting the average), it's hard to know if the model adds any value.
 - **Not holding out test data.** Evaluating a model only on the data it was trained on hides overfitting and overstates real performance.
-- **Ignoring data quality.** Feeding a model incomplete, mislabeled, or unrepresentative data, then blaming the algorithm when it performs poorly.
 - **Deploying without a monitoring plan.** Treating training as the finish line, rather than the start of an ongoing maintenance responsibility.
 
 ## Interview questions
 
+### Basic
+
 - What is the difference between traditional programming and machine learning?
-- Why would you choose a machine learning approach over a rule-based system for a given problem?
 - What is a model, in the context of machine learning?
+
+### Intermediate
+
+- Why would you choose a machine learning approach over a rule-based system for a given problem? When would you choose the rule-based system instead?
 - What is overfitting, and how would you detect it?
+
+### Advanced
+
 - Give an example of a problem where machine learning is the wrong tool. Why?
+- A production model's accuracy hasn't changed, but business complaints are up. What upstream causes would you investigate before touching the model itself?
