@@ -15,7 +15,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] What is Machine Learning
 - [x] Types of Machine Learning
 - [x] ML Workflow
-- [ ] Bias vs Variance
+- [x] Bias vs Variance
 - [ ] Feature Engineering
 
 ## Statistics
