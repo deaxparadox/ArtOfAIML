@@ -6,6 +6,7 @@ This folder covers Retrieval-Augmented Generation: giving a language model acces
 
 - [What is RAG](what-is-rag.md)
 - [Chunking](chunking.md)
+- [Query Rewriting / Query Expansion](query-rewriting.md)
 - [Retrieval](retrieval.md)
 - [Reranking](reranking.md)
 - [Evaluation](evaluation.md)

@@ -88,7 +88,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] [What is RAG](rag/what-is-rag.md)
 - [x] [Chunking](rag/chunking.md)
-- [ ] Query Rewriting / Query Expansion
+- [x] [Query Rewriting / Query Expansion](rag/query-rewriting.md)
 - [x] [Retrieval](rag/retrieval.md)
 - [x] [Vector Databases](vector-databases/vector-databases.md)
 - [x] [Reranking](rag/reranking.md)
