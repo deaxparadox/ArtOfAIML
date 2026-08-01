@@ -2,7 +2,7 @@
 
 ## What is it?
 
-A Transformer is a neural network architecture built around a mechanism called **attention** (covered in depth in the next chapter), designed to process sequences — most commonly, sequences of token embeddings — by letting every position in the sequence directly gather information from every other position, all at once, rather than one step at a time.
+A Transformer is a neural network architecture built around a mechanism called [attention](attention.md), designed to process sequences — most commonly, sequences of token embeddings — by letting every position in the sequence directly gather information from every other position, all at once, rather than one step at a time.
 
 Think of an older, sequential architecture (like a recurrent neural network) as reading a book one word at a time, carrying forward only a running summary — by the last word, details from the first word have faded. A Transformer instead lays every word of the book on a table at once and lets each word directly look at every other word, however far away, to figure out what's relevant to it.
 
@@ -16,7 +16,7 @@ The Transformer architecture solves both at once. Attention lets every position 
 
 ## How does it work?
 
-At a high level, without yet covering the attention computation itself (the next chapter's focus):
+At a high level, without yet covering the attention computation itself (see [Attention](attention.md)):
 
 1. Input tokens become embeddings, as covered in [Embeddings](../embeddings/embeddings.md).
 2. Attention itself has no inherent sense of order — it treats a sequence as a set of positions, not a sequence — so positional information gets added to each embedding, letting the model tell "first token" from "fifth token" apart.
@@ -25,7 +25,7 @@ At a high level, without yet covering the attention computation itself (the next
 
 ## Example
 
-A simplified, honest illustration of the specific property that motivates Transformers — not the actual attention mechanism itself, covered in the next chapter — comparing a computation that must proceed one step at a time against one where every position's result depends only on the shared input, not on another position's output:
+A simplified, honest illustration of the specific property that motivates Transformers — not the actual attention mechanism itself, covered in [Attention](attention.md) — comparing a computation that must proceed one step at a time against one where every position's result depends only on the shared input, not on another position's output:
 
 ```python
 import numpy as np
@@ -59,7 +59,7 @@ sequential: 7.51 ms
 parallel:   1.16 ms
 ```
 
-About 6.5x faster for the parallel version, on a comparable amount of arithmetic — the same kind of vectorization advantage already verified directly in [NumPy](../python-for-ml/numpy.md), just illustrating why the *structural* independence between positions, not carrying a dependency from one step to the next, is what makes an entire sequence computable at once rather than one token at a time. Real attention is more involved than this — computing how much each position should actually weigh every other position is the next chapter's subject — but this independence is the property that makes that computation parallelizable in the first place.
+About 6.5x faster for the parallel version, on a comparable amount of arithmetic — the same kind of vectorization advantage already verified directly in [NumPy](../python-for-ml/numpy.md), just illustrating why the *structural* independence between positions, not carrying a dependency from one step to the next, is what makes an entire sequence computable at once rather than one token at a time. Real attention is more involved than this — computing how much each position should actually weigh every other position is what [Attention](attention.md) covers — but this independence is the property that makes that computation parallelizable in the first place.
 
 ## Where is it used?
 
@@ -87,7 +87,7 @@ The architecture behind essentially every modern large language model, and incre
 
 - **Assuming a longer context window is free or nearly free**, when the underlying attention computation cost grows quadratically with it.
 - **Treating all Transformer-based models as interchangeable in terms of cost and latency**, without checking the model size and attention implementation details that affect both directly.
-- **Conflating "Transformer" with "attention" as if they were the same thing.** The Transformer is the overall architecture; attention is the specific mechanism inside it, covered in depth in the next chapter.
+- **Conflating "Transformer" with "attention" as if they were the same thing.** The Transformer is the overall architecture; attention is the specific mechanism inside it, covered in depth in [Attention](attention.md).
 
 ## Interview questions
 

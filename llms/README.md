@@ -5,3 +5,4 @@ This folder covers the foundations of large language models: the architecture be
 ## Chapters
 
 - [Transformers](transformers.md)
+- [Attention](attention.md)
