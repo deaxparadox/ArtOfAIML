@@ -12,3 +12,4 @@ This folder covers the statistical foundations used throughout the rest of this 
 - [Normal Distribution](normal-distribution.md)
 - [Probability](probability.md)
 - [Bayes Theorem](bayes-theorem.md)
+- [Correlation vs Causation](correlation-vs-causation.md)
