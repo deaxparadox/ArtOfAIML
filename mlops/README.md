@@ -6,3 +6,4 @@ This folder covers deploying and operating AI systems in production: serving a m
 
 - [FastAPI](fastapi.md)
 - [Docker](docker.md)
+- [Kubernetes](kubernetes.md)
