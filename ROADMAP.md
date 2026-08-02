@@ -114,7 +114,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 - [x] [FastAPI](mlops/fastapi.md) (lives in `mlops/` — see Placement Rules)
 - [x] [LLM Serving](mlops/llm-serving.md)
-- [ ] Feature Store
+- [x] [Feature Store](mlops/feature-store.md)
 - [x] [Docker](mlops/docker.md) (lives in `mlops/` — see Placement Rules)
 - [x] [Kubernetes](mlops/kubernetes.md) (lives in `mlops/` — see Placement Rules)
 - [ ] Canary Deployment / Model Rollout
