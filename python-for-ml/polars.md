@@ -20,6 +20,14 @@ Pandas runs each line of code the moment you write it — closer to typing indiv
 - **Eager mode** (`pl.DataFrame`) behaves like pandas — every operation runs immediately.
 - **Lazy mode** (`.lazy()`, or `pl.scan_csv` for reading a file lazily) builds a query plan you materialize explicitly with `.collect()`. The planner can push filters and column selection down to the earliest possible point in the plan, and parallelize independent parts of it across CPU cores automatically.
 
+```mermaid
+flowchart LR
+    A[".lazy()"] --> B["Build query plan\n(filter, select, group_by...)"]
+    B --> C["Optimizer:\npredicate + projection pushdown"]
+    C --> D["Parallel execution\nacross CPU cores"]
+    D --> E[".collect()\n(materialized DataFrame)"]
+```
+
 ## Example
 
 The same customer table from [Pandas](pandas.md), in Polars:
@@ -38,9 +46,15 @@ print(customers.group_by("plan").agg(pl.col("monthly_revenue").mean()))
 ```
 
 ```text
-plan   monthly_revenue
-basic  11.0
-pro    30.0
+shape: (2, 2)
+┌───────┬─────────────────┐
+│ plan  ┆ monthly_revenue │
+│ ---   ┆ ---             │
+│ str   ┆ f64             │
+╞═══════╪═════════════════╡
+│ pro   ┆ 30.0            │
+│ basic ┆ 11.0            │
+└───────┴─────────────────┘
 ```
 
 Note `group_by`, not pandas' `groupby` — a small but real API difference, covered below. Missing values are skipped in the mean here too, the same as pandas.
