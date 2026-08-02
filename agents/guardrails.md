@@ -74,7 +74,7 @@ Any agent with tools that have real financial, data, or communication consequenc
 ## Production considerations
 
 - **Guardrail rules need the same review and versioning discipline as any other production logic**, per [ML Workflow](../machine-learning/ml-workflow.md) — a silently outdated threshold is a real operational risk, not a static safety net.
-- **A blocked action needs a real next step**, not just a dead end — which is exactly what Human-in-the-Loop (the next chapter) exists to provide.
+- **A blocked action needs a real next step**, not just a dead end — which is exactly what [Human-in-the-Loop](human-in-the-loop.md) exists to provide.
 - **Guardrails add a real check on every tool call**, a small but nonzero latency cost that compounds across a multi-step agent loop, per [Agent Architecture](agent-architecture.md#production-considerations).
 
 ## Common mistakes

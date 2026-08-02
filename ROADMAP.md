@@ -104,7 +104,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [LangGraph](agents/langgraph.md)
 - [x] [Tool Calling](agents/tool-calling.md)
 - [x] [Guardrails](agents/guardrails.md)
-- [ ] Human-in-the-Loop
+- [x] [Human-in-the-Loop](agents/human-in-the-loop.md)
 - [x] [Multi-Agent Systems](agents/multi-agent-systems.md)
 - [ ] Agent Evaluation
 
