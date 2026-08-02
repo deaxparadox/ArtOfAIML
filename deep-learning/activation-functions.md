@@ -60,6 +60,9 @@ The sigmoid network's gradient at the first layer has shrunk to essentially zero
 **Dying ReLU, measured directly**: a single unit whose pre-activation is pushed permanently negative by a large negative bias.
 
 ```python
+import numpy as np
+
+rng = np.random.default_rng(1)
 X = rng.normal(size=(100, 3))
 W = rng.normal(size=3)
 b = -10.0  # strongly negative bias
@@ -78,11 +81,11 @@ Across all 100 inputs, this unit's pre-activation never crosses zero — it outp
 
 ## Where is it used?
 
-Every hidden layer in every network architecture in this handbook — ReLU or a variant is the default for hidden layers in most modern networks including CNNs and Transformers, while sigmoid remains standard specifically at an output layer producing a probability, and tanh still appears inside LSTM gates (covered in the upcoming RNNs / LSTMs chapter).
+Every hidden layer in every network architecture in this handbook — ReLU or a variant is the default for hidden layers in most modern networks including [CNNs](cnns.md) and Transformers, while sigmoid remains standard specifically at an output layer producing a probability, and tanh still appears inside LSTM gates (covered in [RNNs / LSTMs](rnns-lstms.md)).
 
 ## Advantages
 
-- **ReLU avoids vanishing gradients across depth**, as the example shows directly — a multi-hundred-order-of-magnitude difference in gradient magnitude reaching the first layer, from the activation function alone.
+- **ReLU avoids vanishing gradients across depth**, as the example shows directly — a twelve-order-of-magnitude difference between the sigmoid and ReLU networks' gradients reaching the first layer, from the activation function alone, with nothing else about the architecture changed.
 - **ReLU is computationally cheap** — a single comparison against zero, compared to sigmoid/tanh's exponential computation, at every unit in every layer.
 - **Sigmoid still directly produces a valid probability**, exactly the property [Supervised Learning](../machine-learning/supervised-learning.md) relies on for Logistic Regression's output layer.
 
