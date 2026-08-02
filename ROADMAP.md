@@ -113,7 +113,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 # Phase 7 — Production AI
 
 - [x] [FastAPI](mlops/fastapi.md) (lives in `mlops/` — see Placement Rules)
-- [ ] LLM Serving
+- [x] [LLM Serving](mlops/llm-serving.md)
 - [ ] Feature Store
 - [x] [Docker](mlops/docker.md) (lives in `mlops/` — see Placement Rules)
 - [x] [Kubernetes](mlops/kubernetes.md) (lives in `mlops/` — see Placement Rules)

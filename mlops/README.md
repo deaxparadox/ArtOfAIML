@@ -5,6 +5,7 @@ This folder covers deploying and operating AI systems in production: serving a m
 ## Chapters
 
 - [FastAPI](fastapi.md)
+- [LLM Serving](llm-serving.md)
 - [Docker](docker.md)
 - [Kubernetes](kubernetes.md)
 - [CI/CD](ci-cd.md)
