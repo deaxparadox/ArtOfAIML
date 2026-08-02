@@ -64,7 +64,7 @@ no dropout:   train=0.950 test=0.833 gap=0.117
 with dropout: train=0.950 test=0.858 gap=0.092
 ```
 
-Same training accuracy (0.950), but dropout narrows the train/test gap from 0.117 to 0.092 — a modest, real effect, consistent across four different random seeds tested during verification (gap reductions of roughly 0.01–0.03 each time), not a one-off lucky result.
+Same training accuracy (0.950), but dropout narrows the train/test gap from 0.117 to 0.092 — a modest, real effect. Re-running the same comparison across three more random seeds during verification gave gap reductions of 0.008, 0.021, and 0.017 — dropout helped every time, though not by a consistent amount, and one of the four runs (0.008) barely moved the needle — an honest picture of a real but genuinely modest effect, not a dramatic one.
 
 **Batch Normalization's core mechanism, verified directly** — before and after normalizing a batch with arbitrary per-feature statistics:
 
