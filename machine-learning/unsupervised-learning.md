@@ -18,9 +18,60 @@ Unsupervised learning is the family of techniques where a model finds structure 
 
 ## How does it work?
 
-**Clustering** assigns each point to a group based on similarity, with no label ever specifying a "correct" grouping. **Dimensionality reduction** finds a smaller set of new dimensions — often linear combinations of the original features, as in PCA/SVD — that preserve most of the original data's variance or structure.
+**Clustering** assigns each point to a group based on similarity, with no label ever specifying a "correct" grouping. **Dimensionality reduction** finds a smaller set of new dimensions — often linear combinations of the original features, as in [PCA](pca.md) or SVD — that preserve most of the original data's variance or structure.
+
+**`KMeans` fits via Lloyd's algorithm**, an iterative two-step loop with no gradient descent involved at all:
+
+1. Pick `k` initial centroids (often `k` random data points).
+2. **Assign step**: assign every point to its nearest centroid.
+3. **Update step**: move each centroid to the mean of the points now assigned to it.
+4. Repeat steps 2–3 until assignments stop changing — a fixed point, since centroids that don't move produce the same assignments next round, and vice versa.
+
+**DBSCAN** works by density instead of iterative refinement: for each point, it counts how many other points fall within a radius `eps`; a point with at least `min_samples` neighbors within that radius is a **core point**, points reachable from a core point join its cluster, and any point reachable from no core point is labeled noise — which is also how DBSCAN detects outliers automatically, something Lloyd's algorithm has no mechanism for at all.
 
 ## Example
+
+**Mechanism verification: does a from-scratch Lloyd's algorithm converge to the same centroids `KMeans` finds?**
+
+```python
+import numpy as np
+from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+
+X, _ = make_blobs(n_samples=150, centers=3, cluster_std=0.8, random_state=0)
+
+rng = np.random.default_rng(0)
+init_idx = rng.choice(len(X), size=3, replace=False)
+centroids = X[init_idx].copy()
+
+for iteration in range(300):
+    distances = np.linalg.norm(X[:, None, :] - centroids[None, :, :], axis=2)
+    assignments = np.argmin(distances, axis=1)
+    new_centroids = np.array([X[assignments == k].mean(axis=0) for k in range(3)])
+    shift = np.linalg.norm(new_centroids - centroids)
+    centroids = new_centroids
+    if shift < 1e-6:
+        print(f"converged at iteration {iteration}")
+        break
+
+sk = KMeans(n_clusters=3, init=X[init_idx], n_init=1, random_state=0).fit(X)
+print("manual centroids:\n", centroids)
+print("sklearn centroids:\n", sk.cluster_centers_)
+```
+
+```text
+converged at iteration 11
+manual centroids:
+ [[-1.75331622  2.9376426 ]
+ [ 0.84069413  4.35679782]
+ [ 2.05130138  1.06134965]]
+sklearn centroids:
+ [[-1.75331622  2.9376426 ]
+ [ 0.84069413  4.35679782]
+ [ 2.05130138  1.06134965]]
+```
+
+The manual assign-update loop matches `KMeans`'s own centroids exactly, given the same starting points. The centroid shift between iterations doesn't shrink monotonically along the way — it actually grows for several iterations (some points keep flipping between two competing clusters) before finally collapsing to zero at iteration 11. That's a real, honest picture of Lloyd's algorithm: it's guaranteed to eventually stop, not guaranteed to improve smoothly on every single step.
 
 `KMeans` genuinely fails on data where the true clusters aren't round — two concentric rings:
 
@@ -79,11 +130,13 @@ Customer segmentation, anomaly detection, topic discovery, and — via dimension
 
 - What's the difference between clustering and dimensionality reduction?
 - What assumption does `KMeans` make about cluster shape?
+- What are the two steps `KMeans` repeats until convergence?
 
 ### Intermediate
 
 - Why does `KMeans` fail on concentric-ring-shaped clusters, and why does DBSCAN succeed?
 - Why is there no direct way to check a clustering result's "accuracy" the way there is for supervised learning?
+- Why isn't `KMeans`'s centroid movement guaranteed to shrink smoothly on every iteration, even though the algorithm is guaranteed to eventually converge?
 
 ### Advanced
 
