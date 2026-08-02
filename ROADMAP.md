@@ -106,7 +106,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Guardrails](agents/guardrails.md)
 - [x] [Human-in-the-Loop](agents/human-in-the-loop.md)
 - [x] [Multi-Agent Systems](agents/multi-agent-systems.md)
-- [ ] Agent Evaluation
+- [x] [Agent Evaluation](agents/agent-evaluation.md)
 
 ---
 

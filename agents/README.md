@@ -11,3 +11,4 @@ This folder covers agentic systems: using an LLM to decide what actions to take,
 - [Guardrails](guardrails.md)
 - [Human-in-the-Loop](human-in-the-loop.md)
 - [Multi-Agent Systems](multi-agent-systems.md)
+- [Agent Evaluation](agent-evaluation.md)
