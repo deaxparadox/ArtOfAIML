@@ -16,7 +16,7 @@ A single linear layer, no matter how it's trained, can only ever represent a lin
 
 ## How does it work?
 
-1. **Forward pass**: each layer computes `activation(X @ W + b)` — a weighted sum of the previous layer's output, plus a bias, passed through a non-linear activation function (its own chapter, Activation Functions).
+1. **Forward pass**: each layer computes `activation(X @ W + b)` — a weighted sum of the previous layer's output, plus a bias, passed through a non-linear activation function (its own chapter, [Activation Functions](activation-functions.md)).
 2. The output of one layer becomes the input to the next, so each additional hidden layer builds a new representation on top of the previous one's output, not directly on the raw input.
 3. The final layer's output is the network's prediction — a class probability (classification) or a continuous value (regression), the same output types [Supervised Learning](../machine-learning/supervised-learning.md#how-does-it-work) already established.
 4. Training adjusts every layer's weights and biases via **gradient descent** — the same mechanism [Supervised Learning](../machine-learning/supervised-learning.md#example) already verified for Linear/Logistic Regression — computing gradients through every layer via **backpropagation** (its own chapter, Backpropagation).

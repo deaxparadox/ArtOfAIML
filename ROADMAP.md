@@ -134,7 +134,7 @@ Added after all 7 original phases were expanded — a genuine gap identified and
 
 - [x] [Neural Networks](deep-learning/neural-networks.md)
 - [x] [Backpropagation](deep-learning/backpropagation.md)
-- [ ] Activation Functions
+- [x] [Activation Functions](deep-learning/activation-functions.md)
 - [ ] Optimizers
 - [ ] CNNs
 - [ ] RNNs / LSTMs

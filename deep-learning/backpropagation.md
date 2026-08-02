@@ -94,7 +94,7 @@ Training every neural network architecture in this handbook and beyond — [Tran
 ## Limitations
 
 - **Requires every operation in the forward pass to be differentiable** (or have a defined subgradient, as ReLU does at zero) — an architecture built from a non-differentiable operation breaks the chain the algorithm depends on.
-- **Gradients can vanish or explode across many layers**, an issue directly tied to which activation function is used — covered in depth in the next chapter, Activation Functions.
+- **Gradients can vanish or explode across many layers**, an issue directly tied to which activation function is used — covered in depth in the next chapter, [Activation Functions](activation-functions.md).
 - **Memory cost scales with network depth**, since every layer's forward-pass values need to be cached until the backward pass uses them — a real, practical constraint on how deep a network can be trained given available memory.
 
 ## Production considerations
