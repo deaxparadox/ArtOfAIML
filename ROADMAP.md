@@ -128,6 +128,20 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 
 ---
 
+# Phase 8 — Deep Learning Fundamentals
+
+Added after all 7 original phases were expanded — a genuine gap identified and confirmed with the user, since [Transformers](llms/transformers.md) had no neural-network groundwork beneath it. Appended as its own phase rather than inserted earlier, per the no-renumbering rule in `CLAUDE.md`.
+
+- [x] [Neural Networks](deep-learning/neural-networks.md)
+- [ ] Backpropagation
+- [ ] Activation Functions
+- [ ] Optimizers
+- [ ] CNNs
+- [ ] RNNs / LSTMs
+- [ ] Regularization for Deep Nets
+
+---
+
 # Placement Rules
 
 These rules apply when a proposed topic does not map cleanly to exactly one existing folder listed in `README.md`.
