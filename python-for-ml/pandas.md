@@ -91,7 +91,7 @@ The EDA and feature engineering steps of [ML Workflow](../machine-learning/ml-wo
 
 - **Assuming pandas and raw NumPy handle missing values the same way.** As shown above, `.groupby().mean()` silently skips `NaN`, while plain `np.mean()` on an array containing `NaN` propagates it through the entire result.
 - **Using `.apply()` where a built-in vectorized operation would do the same work**, quietly losing most of the performance benefit both pandas and NumPy exist to provide.
-- **Chained assignment**, e.g. `df["foo"][df["bar"] > 5] = 100`. In current pandas (Copy-on-Write is the default as of pandas 3.0), this raises a `ChainedAssignmentError` rather than silently succeeding or failing depending on internal memory layout — the fix is `df.loc[df["bar"] > 5, "foo"] = 100` in a single step.
+- **Chained assignment**, e.g. `df["foo"][df["bar"] > 5] = 100`. With Copy-on-Write as the default since pandas 2.0, this now reliably does nothing to the original DataFrame — no longer the old behavior of sometimes working and sometimes not depending on internal memory layout — while raising a `ChainedAssignmentError` *warning* (not a raised, catchable exception; execution continues) to flag that the assignment was silently discarded. The fix is the same either way: `df.loc[df["bar"] > 5, "foo"] = 100` in a single step, which both works and never warns.
 
 ## Interview questions
 
