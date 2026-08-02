@@ -49,17 +49,26 @@ svd = TruncatedSVD(n_components=2, random_state=0)
 X_reduced = svd.fit_transform(X)
 qv_reduced = svd.transform(qv)
 semantic_sims = cosine_similarity(qv_reduced, X_reduced)[0]
+
+print("keyword-based:")
+for doc, score in sorted(zip(documents, keyword_sims), key=lambda p: -p[1]):
+    print(round(score, 3), doc)
+
+print("\nsemantic (SVD-compressed):")
+for doc, score in sorted(zip(documents, semantic_sims), key=lambda p: -p[1]):
+    print(round(score, 3), doc)
 ```
 
 ```text
 keyword-based:
 0.394 - If you see error code E-4471, restart the device and reconnect to Wi-Fi.
-0.0   - (every other document)
+0.0   - (the other three documents)
 
 semantic (SVD-compressed):
-0.999 - To reset your password, go to account settings and click forgot password.
-0.999 - If you see error code E-4471, restart the device and reconnect to Wi-Fi.
-0.031 - Battery life varies depending on screen brightness and usage patterns.
+0.999  - To reset your password, go to account settings and click forgot password.
+0.999  - If you see error code E-4471, restart the device and reconnect to Wi-Fi.
+0.031  - Battery life varies depending on screen brightness and usage patterns.
+-0.017 - Our mobile app supports both iOS and Android devices running recent versions.
 ```
 
 Keyword search finds the right document unambiguously — the exact term "E-4471" appears nowhere else, so its score is the only nonzero one. Semantic search, compressed down to 2 dimensions the same way the [Embeddings](../embeddings/embeddings.md) example was, essentially fails here: the error-code document and the unrelated password-reset document score almost identically. (This particular gap is exaggerated by using only 2 dimensions on a tiny corpus — a real semantic model would do better — but the underlying phenomenon is genuine: dense compression can wash out an exact, rare term precisely because it's rare, which is the opposite of a keyword search's strength.)

@@ -44,8 +44,10 @@ def rank(query):
 original_query = "Can I send this back?"
 rewritten_query = "Can I send this back? What is your return and refund policy?"
 
-for doc, score in rank(original_query):
-    print(round(score, 3), doc)
+for label, query in [("original", original_query), ("rewritten", rewritten_query)]:
+    print(f"{label} query {query!r}:")
+    for doc, score in rank(query):
+        print(round(score, 3), doc)
 ```
 
 ```text

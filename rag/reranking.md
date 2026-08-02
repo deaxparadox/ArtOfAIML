@@ -44,6 +44,14 @@ X_reduced = svd.fit_transform(X)
 qv_reduced = svd.transform(qv)
 initial_scores = cosine_similarity(qv_reduced, X_reduced)[0]  # cheap, compressed
 full_scores = cosine_similarity(qv, X)[0]                     # slower, full precision
+
+print("initial retrieval (compressed):")
+for doc, score in sorted(zip(documents, initial_scores), key=lambda p: -p[1]):
+    print(round(score, 3), doc)
+
+print("\nreranked (full precision):")
+for doc, score in sorted(zip(documents, full_scores), key=lambda p: -p[1]):
+    print(round(score, 3), doc)
 ```
 
 ```text
