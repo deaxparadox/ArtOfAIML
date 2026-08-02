@@ -41,7 +41,7 @@ for _ in range(2000):
     if p < 0.05:
         false_significant += 1
 
-print(apparent_b_better / 2000)   # -> 0.258
+print(apparent_b_better / 2000)   # -> 0.2575
 print(false_significant / 2000)  # -> 0.052
 ```
 
@@ -55,6 +55,7 @@ With genuinely identical conversion rates, B looks meaningfully better than A pu
 A confidence interval on one specific run makes the honest conclusion directly visible:
 
 ```python
+rng = np.random.default_rng(0)
 a = rng.binomial(1, true_rate, 200)
 b = rng.binomial(1, true_rate, 200)
 diff = b.mean() - a.mean()
