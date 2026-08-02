@@ -98,7 +98,7 @@ import numpy as np
 from sklearn.tree import DecisionTreeClassifier, export_text
 
 X = np.array([[1], [2], [3], [4], [5], [6], [7], [8]])
-y = np.array([0, 0, 0, 1, 0, 1, 1, 1])
+y = np.array([0, 0, 0, 1, 1, 0, 1, 1])
 
 def gini(labels):
     p1 = np.mean(labels)
@@ -126,7 +126,7 @@ best manual split: <= 3 gain: 0.3
 |   |--- class: 1
 ```
 
-The manual search finds `<= 3` as the split with the highest information gain (0.3) — and `DecisionTreeClassifier` picks the exact same boundary (`<= 3.50`, the midpoint between 3 and 4). The tree isn't doing anything mysterious at each node; it's running exactly this brute-force impurity comparison, just faster and over every feature at once.
+Despite one flipped label (`x=6` fails even though `x=4` and `x=5`, less studied, both pass), the manual search finds a single, unambiguous best split, `<= 3` with information gain 0.3 — and `DecisionTreeClassifier` picks the exact same boundary (`<= 3.50`, the midpoint between 3 and 4). The tree isn't doing anything mysterious at each node; it's running exactly this brute-force impurity comparison, just faster and over every feature at once.
 
 **Algorithm selection: same data, three algorithms, on data that isn't linearly separable** — points arranged in two interleaving crescents:
 
