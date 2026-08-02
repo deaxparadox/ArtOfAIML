@@ -33,7 +33,7 @@ print("fully-connected layer params:", fc_params)
 kernel_size, n_filters = 3, 16
 conv_params = (kernel_size * kernel_size * channels) * n_filters + n_filters
 print("conv layer params (16 filters):", conv_params)
-print("ratio:", fc_params / conv_params)
+print(f"ratio: {fc_params / conv_params:.2f}")
 ```
 
 ```text
@@ -71,8 +71,6 @@ print(convolve2d(image, vertical_edge_kernel))
 
 ```text
 [[   0. -570. -570.    0.]
- [   0. -570. -570.    0.]
- [   0. -570. -570.    0.]
  [   0. -570. -570.    0.]]
 ```
 
