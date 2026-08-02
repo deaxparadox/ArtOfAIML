@@ -6,10 +6,6 @@ A running backlog of chapters or topics that shipped with a known limitation, an
 
 - **[Regularization](machine-learning/regularization.md)** — the unregularized degree-15 baseline in this chapter's example (200,698 test MSE) doesn't match the number `Bias vs Variance` published for the same setup (1,892), because solving via the normal equations directly is far more numerically unstable than `np.polyfit`'s method. The chapter names this honestly but doesn't explain the underlying numerical linear algebra reason in depth. Revisit if a deeper "why do these differ" treatment would help.
 
-## LLMs
-
-- **[Fine-Tuning](llms/fine-tuning.md)** — the verified example shows a pretrained model's zero-shot performance (83.3%) matching its fine-tuned performance on the same tiny dataset (83.3%), so fine-tuning's own marginal contribution isn't actually demonstrated, only the value of starting from pretrained weights. Revisit with a scenario where the target task differs enough from the pretraining distribution to leave real room for fine-tuning to improve on zero-shot, or with real LLM fine-tuning access.
-
 ## MLOps
 
 - **[Kubernetes](mlops/kubernetes.md)** — YAML verified against current docs but never deployed against a live cluster; deliberately skipped since spinning up `minikube` would cost several minutes and real CPU/memory on this shared host. Revisit with an actual deployment if that cost becomes acceptable.
@@ -18,3 +14,7 @@ A running backlog of chapters or topics that shipped with a known limitation, an
 ## RAG
 
 - **[Vector Databases](vector-databases/vector-databases.md)** — the example verifies the core ANN indexing mechanism directly (`hnswlib`), but never touches what actually makes something a *database*: metadata filtering, persistence, a real server product (Pinecone, Qdrant, Weaviate, Milvus). Revisit with an actual vector database product to demonstrate those parts, not just the underlying index algorithm.
+
+## Agents
+
+- **[Agent Architecture](agents/agent-architecture.md)**, **[LangGraph](agents/langgraph.md)**, **[Multi-Agent Systems](agents/multi-agent-systems.md)**, **[Human-in-the-Loop](agents/human-in-the-loop.md)** — each explains a workflow, graph, or interaction loop in prose only, without the Mermaid diagram `AUTHOR_GUIDE.md` calls for by default in exactly this case. Found during a full-repo audit (2026-08-02); not unique to these four, but they're the clearest cases. Revisit by adding a diagram to each.
