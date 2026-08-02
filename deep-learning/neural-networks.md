@@ -92,7 +92,7 @@ Every architecture covered elsewhere in this handbook is built from this same fo
 
 - **More parameters means more data (and compute) is needed to fit them well** — a network with many layers and units can overfit a small dataset far more easily than the single-layer models covered in [Supervised Learning](../machine-learning/supervised-learning.md).
 - **Loses the direct interpretability of a linear model.** A `LogisticRegression` coefficient has a direct meaning; a weight three layers deep in a network generally doesn't, on its own.
-- **Training is a genuinely harder optimization problem** than fitting a single linear layer — see the upcoming Backpropagation and Optimizers chapters for what that actually requires in practice.
+- **Training is a genuinely harder optimization problem** than fitting a single linear layer — see [Backpropagation](backpropagation.md) and [Optimizers](optimizers.md) for what that actually requires in practice.
 
 ## Production considerations
 
@@ -104,7 +104,7 @@ Every architecture covered elsewhere in this handbook is built from this same fo
 
 - **Reaching for a deep network on a problem a linear model already solves well**, adding real training cost, overfitting risk, and lost interpretability for no corresponding gain.
 - **Assuming more layers always helps**, without checking whether the added depth is actually needed to represent the target function, versus just adding more ways to overfit.
-- **Treating architecture as separate from training difficulty.** A deeper network isn't just "the same training, more layers" — see the upcoming Backpropagation and Optimizers chapters for why depth itself makes training harder.
+- **Treating architecture as separate from training difficulty.** A deeper network isn't just "the same training, more layers" — see [Backpropagation](backpropagation.md) and [Optimizers](optimizers.md) for why depth itself makes training harder.
 
 ## Interview questions
 

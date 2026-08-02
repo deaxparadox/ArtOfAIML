@@ -20,7 +20,7 @@ Backpropagation is the algorithm for computing the gradient of a network's loss 
 2. Compute the loss at the output layer.
 3. Compute the gradient of the loss with respect to the *output* layer's pre-activation — for sigmoid output with binary cross-entropy loss, this has a famously simple closed form: `prediction - true_label`.
 4. **Propagate backward, layer by layer**: at each layer, use the chain rule to turn "gradient with respect to this layer's output" into "gradient with respect to this layer's weights and bias" (needed for the weight update) and "gradient with respect to the previous layer's output" (needed to keep propagating backward) — multiplying by the local activation function's derivative at each step.
-5. Every weight and bias's gradient, once computed, feeds into a gradient descent update — Optimizers (its own upcoming chapter) covers what actually happens beyond the plain update rule already verified in [Supervised Learning](../machine-learning/supervised-learning.md#example).
+5. Every weight and bias's gradient, once computed, feeds into a gradient descent update — [Optimizers](optimizers.md) (its own chapter) covers what actually happens beyond the plain update rule already verified in [Supervised Learning](../machine-learning/supervised-learning.md#example).
 
 ## Example
 
@@ -107,7 +107,7 @@ Training every neural network architecture in this handbook and beyond — [Tran
 
 - **Trusting that a decreasing loss means a from-scratch backprop implementation is correct**, when a subtly wrong gradient can sometimes still decrease the loss for a while before failing — gradient checking, as shown in the example, catches errors a decreasing loss alone would miss.
 - **Not caching forward-pass values needed by the backward pass**, forcing a wasteful recomputation, or worse, silently using a stale or incorrect intermediate value.
-- **Treating "backpropagation" and "gradient descent" as the same thing.** Backpropagation computes the gradient; gradient descent (or one of the Optimizers built on top of it, covered next) is what actually uses that gradient to update the weights.
+- **Treating "backpropagation" and "gradient descent" as the same thing.** Backpropagation computes the gradient; gradient descent (or one of the [Optimizers](optimizers.md) built on top of it) is what actually uses that gradient to update the weights.
 
 ## Interview questions
 
