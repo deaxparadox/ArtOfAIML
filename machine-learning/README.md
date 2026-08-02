@@ -17,3 +17,6 @@ This folder covers the foundational concepts of machine learning: what it is, wh
 - [Cross-Validation](cross-validation.md)
 - [Ensemble Methods](ensemble-methods.md)
 - [Feature Engineering](feature-engineering.md)
+- [SVM](svm.md)
+- [Naive Bayes](naive-bayes.md)
+- [PCA](pca.md)

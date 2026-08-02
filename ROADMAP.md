@@ -25,6 +25,9 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Cross-Validation](machine-learning/cross-validation.md)
 - [x] [Ensemble Methods](machine-learning/ensemble-methods.md)
 - [x] [Feature Engineering](machine-learning/feature-engineering.md)
+- [x] [SVM](machine-learning/svm.md)
+- [x] [Naive Bayes](machine-learning/naive-bayes.md)
+- [x] [PCA](machine-learning/pca.md)
 
 ## Statistics
 
