@@ -76,7 +76,7 @@ Despite a test that correctly identifies 99% of true cases, a positive result me
 
 ## Where is it used?
 
-- **Naive Bayes classifiers** — an entire, still widely used model family built directly on this formula, using the independence assumption flagged in [Probability](probability.md) (hence "naive").
+- **[Naive Bayes](../machine-learning/naive-bayes.md) classifiers** — an entire, still widely used model family built directly on this formula, using the independence assumption flagged in [Probability](probability.md) (hence "naive").
 - **Spam filtering** — the original, classic application of Bayesian reasoning to text classification.
 - **Fraud and rare-event detection** — where the base rate of the event being detected is low, exactly the setting the medical test example illustrates.
 - **Belief updating over time** — a posterior from one round of evidence becomes the prior for the next, the basis for continuously updating a system's confidence as new signals arrive.
