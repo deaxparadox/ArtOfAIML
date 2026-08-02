@@ -13,3 +13,4 @@ This folder covers deploying and operating AI systems in production: serving a m
 - [Model Registry](model-registry.md)
 - [CI/CD](ci-cd.md)
 - [Observability](observability.md)
+- [Drift Monitoring](drift-monitoring.md)
