@@ -138,7 +138,7 @@ Added after all 7 original phases were expanded — a genuine gap identified and
 - [x] [Optimizers](deep-learning/optimizers.md)
 - [x] [CNNs](deep-learning/cnns.md)
 - [x] [RNNs / LSTMs](deep-learning/rnns-lstms.md)
-- [ ] Regularization for Deep Nets
+- [x] [Regularization for Deep Nets](deep-learning/regularization-deep-nets.md)
 
 ---
 
