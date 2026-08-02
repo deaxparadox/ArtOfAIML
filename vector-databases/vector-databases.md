@@ -37,8 +37,8 @@ true_nearest = set(np.argsort(dists)[:10])
 print("brute-force:", (time.perf_counter() - t0) * 1000, "ms")
 
 index = hnswlib.Index(space="l2", dim=64)
-index.init_index(max_elements=50000, ef_construction=100, M=16)
-index.add_items(data, np.arange(50000))
+index.init_index(max_elements=50000, ef_construction=100, M=16, random_seed=0)
+index.add_items(data, np.arange(50000), num_threads=1)  # single-threaded: makes graph construction deterministic
 
 for ef in [10, 50, 100, 300]:
     index.set_ef(ef)
@@ -50,15 +50,17 @@ for ef in [10, 50, 100, 300]:
 ```
 
 ```text
-brute-force: 18.496 ms
+brute-force: 16.992 ms
 
-ef=10:  0.064 ms, recall@10=0.30
-ef=50:  0.100 ms, recall@10=0.80
-ef=100: 0.145 ms, recall@10=1.00
-ef=300: 0.427 ms, recall@10=1.00
+ef=10:  0.054 ms, recall@10=0.10
+ef=50:  0.077 ms, recall@10=0.70
+ef=100: 0.116 ms, recall@10=1.00
+ef=300: 0.349 ms, recall@10=1.00
 ```
 
-At its fastest setting, the ANN index is nearly 300x faster than brute-force search, but recovers only 3 of the true 10 nearest neighbors. Raising `ef` — the search-time parameter controlling how much of the index gets explored — trades that speed back for accuracy: by `ef=100`, recall reaches a perfect 1.00, still over 100x faster than brute-force. Past that point, `ef=300` costs three times the search time for no additional recall at all. This is the tunable trade-off [Retrieval](../rag/retrieval.md#limitations) already named — not a fixed cost, but a dial with a real, verifiable curve behind it.
+At its fastest setting, the ANN index is over 300x faster than brute-force search, but recovers only 1 of the true 10 nearest neighbors. Raising `ef` — the search-time parameter controlling how much of the index gets explored — trades that speed back for accuracy: by `ef=100`, recall reaches a perfect 1.00, still over 100x faster than brute-force. Past that point, `ef=300` costs three times the search time for no additional recall at all here. This is the tunable trade-off [Retrieval](../rag/retrieval.md#limitations) already named — not a fixed cost, but a dial with a real, verifiable curve behind it.
+
+**A real caveat, worth stating plainly: HNSW's graph construction is itself randomized**, independent of any `numpy` seed. Without pinning `random_seed` and forcing single-threaded construction (`num_threads=1`) as done above, rerunning this exact script produces a *different* graph each time, and recall at a given `ef` genuinely varies run to run — in unseeded repeats of this same example, `ef=100` landed anywhere from 0.70 to 1.00, not reliably the perfect score shown here. The trade-off's *shape* (recall rises with `ef`, cost rises too) is real and stable; the *exact numbers* at a given `ef` are not, unless construction is explicitly pinned the way this example now does.
 
 ## Where is it used?
 
@@ -72,7 +74,7 @@ Every production RAG system's retrieval step at real scale, semantic search prod
 
 ## Limitations
 
-- **Approximate search can miss the true best match**, by design — the speed gain comes from accepting a tunable error rate, not a free lunch, exactly as this chapter's `ef=10` result shows starkly (recall of only 0.30).
+- **Approximate search can miss the true best match**, by design — the speed gain comes from accepting a tunable error rate, not a free lunch, exactly as this chapter's `ef=10` result shows starkly (recall of only 0.10).
 - **Index build time and memory cost scale with the number of vectors**, and rebuilding a large index after significant data changes isn't instantaneous.
 - **Choosing the right index parameters requires knowing the actual recall a use case needs** — there's no universally correct setting, only a trade-off to tune against real requirements.
 
