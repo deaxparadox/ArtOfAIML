@@ -8,4 +8,5 @@ This folder covers agentic systems: using an LLM to decide what actions to take,
 - [Agent Memory](agent-memory.md)
 - [LangGraph](langgraph.md)
 - [Tool Calling](tool-calling.md)
+- [Guardrails](guardrails.md)
 - [Multi-Agent Systems](multi-agent-systems.md)
