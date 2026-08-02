@@ -35,18 +35,18 @@ X_small, y_small = X_pool[:12], y_pool[:12]  # only 12 task-specific examples
 
 scratch_model = MLPClassifier(hidden_layer_sizes=(16,), max_iter=2000, random_state=0)
 scratch_model.fit(X_small, y_small)
-print(accuracy_score(y_test, scratch_model.predict(X_test)))  # -> 0.700
+print(accuracy_score(y_test, scratch_model.predict(X_test)))  # -> 0.825
 
 pretrained_model = MLPClassifier(hidden_layer_sizes=(16,), max_iter=500, random_state=0, warm_start=True)
 pretrained_model.fit(X_general, y_general)
-print(accuracy_score(y_test, pretrained_model.predict(X_test)))  # -> 0.833, before any task-specific training at all
+print(accuracy_score(y_test, pretrained_model.predict(X_test)))  # -> 0.975, before any task-specific training at all
 
 pretrained_model.set_params(max_iter=100)
 pretrained_model.fit(X_small, y_small)
-print(accuracy_score(y_test, pretrained_model.predict(X_test)))  # -> 0.833
+print(accuracy_score(y_test, pretrained_model.predict(X_test)))  # -> 0.925
 ```
 
-Training from scratch on just 12 examples reaches 70% accuracy. The pretrained model — evaluated before it has seen a single task-specific example — already reaches 83.3%, purely by carrying over general structure learned from the larger dataset. Continuing to train it on the same 12 examples didn't improve on that further here, an honest result worth explaining rather than hiding: in this case, the general pretraining distribution already overlapped enough with the specialized task that most of the benefit came from starting with pretrained weights at all, not from the small amount of additional fine-tuning. How much fine-tuning adds *beyond* a pretrained model's starting point depends entirely on how much the target task actually differs from what the model already learned.
+Training from scratch on just 12 examples reaches 82.5% accuracy. The pretrained model — evaluated before it has seen a single task-specific example — already reaches 97.5%, purely by carrying over general structure learned from the larger dataset. Continuing to train it on those same 12 examples then makes it *worse*, down to 92.5% — an honest, if initially surprising, result worth explaining rather than hiding: with only 12 examples to fine-tune on, the model overfits to that tiny set's specific noise, actively damaging the better-generalizing representation the pretrained weights already had. Fine-tuning isn't automatically an improvement layered on top of a pretrained starting point — with too little task-specific data, it can genuinely make a model worse than simply using it zero-shot. This is a real, well-known risk in practice, not an artifact of this toy example: the fix is more fine-tuning data, a smaller learning rate or fewer fine-tuning steps, or in some cases deciding the pretrained model's zero-shot performance was already good enough.
 
 ## Where is it used?
 
@@ -60,9 +60,9 @@ Specializing a general-purpose LLM for a consistent brand voice, a domain-specif
 
 ## Limitations
 
-- **Fine-tuning's marginal benefit isn't guaranteed**, as this chapter's own example shows — when the pretrained model already generalizes well to the target task, additional fine-tuning may add little on top of it.
-- **Requires a labeled, task-specific dataset**, with all the same collection and quality costs already covered in [Feature Engineering](../machine-learning/feature-engineering.md) and [ML Workflow](../machine-learning/ml-workflow.md).
-- **A poorly aligned pretrained starting point can actively hurt.** If the source domain conflicts with the target task rather than complementing it, a few fine-tuning steps may not be enough to correct course, and can perform worse than training fresh on the same small dataset.
+- **Fine-tuning's benefit isn't guaranteed, and can be negative**, as this chapter's own example shows directly — with too little task-specific data, continued training actively made a better-generalizing pretrained model worse, not just failed to improve it.
+- **Requires a labeled, task-specific dataset**, with all the same collection and quality costs already covered in [Feature Engineering](../machine-learning/feature-engineering.md) and [ML Workflow](../machine-learning/ml-workflow.md) — and, as the example shows, a dataset too small to fine-tune on safely is itself a real risk, not just a smaller benefit.
+- **A poorly aligned pretrained starting point can actively hurt in a different way** — if the source domain conflicts with the target task rather than complementing it, fine-tuning may not be enough to correct course even with adequate data, independent of the small-data overfitting risk shown here.
 
 ## Production considerations
 
@@ -73,8 +73,8 @@ Specializing a general-purpose LLM for a consistent brand voice, a domain-specif
 ## Common mistakes
 
 - **Reaching for fine-tuning before trying prompt engineering or RAG**, taking on real cost and maintenance burden for a problem a cheaper lever might have solved.
-- **Assuming fine-tuning will always improve on a pretrained model's baseline**, when the actual improvement depends on how much the target task genuinely differs from the pretraining distribution.
-- **Fine-tuning on too little data without checking whether the pretrained starting point is even well-aligned with the target task first.**
+- **Assuming fine-tuning will always improve on a pretrained model's zero-shot baseline**, when this chapter's example shows it can measurably make things worse if the fine-tuning set is too small to safely train on.
+- **Fine-tuning on too little data without checking the zero-shot baseline first** — as the example shows, that baseline can already be the better model, and skipping the comparison means never noticing fine-tuning made things worse.
 
 ## Interview questions
 
@@ -90,5 +90,5 @@ Specializing a general-purpose LLM for a consistent brand voice, a domain-specif
 
 ### Advanced
 
-- In this chapter's example, fine-tuning added no measurable benefit over the pretrained model's zero-shot performance. What would that suggest about the relationship between the pretraining and target distributions, and when would you expect fine-tuning to add more?
-- How would you decide whether a use case needs fine-tuning, versus better prompting, versus RAG?
+- In this chapter's example, fine-tuning on 12 examples made the model *worse* than its own zero-shot performance. What does that suggest about the relationship between fine-tuning set size and overfitting risk, and how would you mitigate it?
+- How would you decide whether a use case needs fine-tuning, versus better prompting, versus RAG — and how would you make sure a fine-tuning decision doesn't get made without first checking the pretrained model's zero-shot baseline?
