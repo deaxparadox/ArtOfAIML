@@ -100,7 +100,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 # Phase 6 — Agents
 
 - [x] [Agent Architecture](agents/agent-architecture.md)
-- [ ] Agent Memory
+- [x] [Agent Memory](agents/agent-memory.md)
 - [x] [LangGraph](agents/langgraph.md)
 - [x] [Tool Calling](agents/tool-calling.md)
 - [ ] Guardrails
