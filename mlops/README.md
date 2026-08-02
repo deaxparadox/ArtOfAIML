@@ -9,5 +9,6 @@ This folder covers deploying and operating AI systems in production: serving a m
 - [Feature Store](feature-store.md)
 - [Docker](docker.md)
 - [Kubernetes](kubernetes.md)
+- [Canary Deployment / Model Rollout](canary-deployment.md)
 - [CI/CD](ci-cd.md)
 - [Observability](observability.md)

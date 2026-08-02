@@ -117,7 +117,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Feature Store](mlops/feature-store.md)
 - [x] [Docker](mlops/docker.md) (lives in `mlops/` — see Placement Rules)
 - [x] [Kubernetes](mlops/kubernetes.md) (lives in `mlops/` — see Placement Rules)
-- [ ] Canary Deployment / Model Rollout
+- [x] [Canary Deployment / Model Rollout](mlops/canary-deployment.md)
 - [ ] Model Registry
 - [x] [CI/CD](mlops/ci-cd.md) (lives in `mlops/` — see Placement Rules)
 - [x] [Observability](mlops/observability.md) (lives in `mlops/` — see Placement Rules)
