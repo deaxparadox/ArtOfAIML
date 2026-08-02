@@ -118,7 +118,7 @@ Every topic listed here should eventually become a dedicated Markdown chapter.
 - [x] [Docker](mlops/docker.md) (lives in `mlops/` — see Placement Rules)
 - [x] [Kubernetes](mlops/kubernetes.md) (lives in `mlops/` — see Placement Rules)
 - [x] [Canary Deployment / Model Rollout](mlops/canary-deployment.md)
-- [ ] Model Registry
+- [x] [Model Registry](mlops/model-registry.md)
 - [x] [CI/CD](mlops/ci-cd.md) (lives in `mlops/` — see Placement Rules)
 - [x] [Observability](mlops/observability.md) (lives in `mlops/` — see Placement Rules)
 - [ ] Drift Monitoring
