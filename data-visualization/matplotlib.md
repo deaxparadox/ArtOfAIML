@@ -45,9 +45,12 @@ for ax, degree in zip(axes, [1, 9, 15]):
     ax.plot(x_smooth, y_smooth, color="black", linewidth=1.5)
     ax.set_ylim(-2, 2)
     ax.set_title(f"degree {degree}")
+    ax.set_xlabel("x")
 
+axes[0].set_ylabel("y")
 axes[0].legend(loc="upper right", fontsize=8)
-fig.savefig("bias-variance-fit.png", dpi=120)
+fig.suptitle("Underfitting (degree 1) vs. good fit (degree 9) vs. overfitting (degree 15)")
+fig.savefig("assets/matplotlib-bias-variance-fit.png", dpi=120)
 ```
 
 ![Three side-by-side plots showing a degree-1 polynomial as a nearly flat line missing the sine curve entirely, a degree-9 polynomial tracking the sine curve closely, and a degree-15 polynomial tracking the curve well through most of the range but swinging wildly near x=8-9, close to the edge of the training data.](assets/matplotlib-bias-variance-fit.png)

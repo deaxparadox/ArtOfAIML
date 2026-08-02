@@ -41,12 +41,17 @@ upper, lower = mean + 3 * std, mean - 3 * std
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x, y=all_values, mode="lines+markers", name="latency (ms)"))
-fig.add_trace(go.Scatter(x=x, y=[upper] * len(x), mode="lines", name="mean + 3 std", line=dict(dash="dash")))
-fig.add_trace(go.Scatter(x=x, y=[lower] * len(x), mode="lines", name="mean - 3 std", line=dict(dash="dash")))
-fig.add_trace(go.Scatter(x=[x[-1]], y=[new_value], mode="markers", name="anomaly (z=20.9)", marker=dict(size=14, symbol="x")))
+fig.add_trace(go.Scatter(x=x, y=[upper] * len(x), mode="lines", name="mean + 3 std", line=dict(dash="dash", color="red")))
+fig.add_trace(go.Scatter(x=x, y=[lower] * len(x), mode="lines", name="mean - 3 std", line=dict(dash="dash", color="red")))
+fig.add_trace(go.Scatter(x=[x[-1]], y=[new_value], mode="markers", name="anomaly (z=20.9)", marker=dict(size=14, symbol="x", color="orange")))
+fig.update_layout(
+    title="Request latency over time, with a 3-sigma anomaly threshold",
+    xaxis_title="request index",
+    yaxis_title="latency (ms)",
+)
 
-fig.write_image("latency.png")               # static export, embedded below
-fig.write_html("latency.html", include_plotlyjs="cdn")  # the actual interactive version
+fig.write_image("assets/plotly-latency-anomaly.png")               # static export, embedded below
+fig.write_html("assets/plotly-latency-anomaly.html", include_plotlyjs="cdn")  # the actual interactive version
 ```
 
 ![Line chart of 11 request latencies. Ten cluster tightly between roughly 97 and 103ms, within red dashed threshold lines at mean plus or minus 3 standard deviations, around 94.4 and 105.8. The eleventh point spikes to 140ms, marked with an orange X labeled "anomaly z=20.9", far above the upper threshold line.](assets/plotly-latency-anomaly.png)
