@@ -16,11 +16,11 @@ A context window is short-term memory: everything currently visible in the conve
 
 ## How does it work?
 
-Memory has to be written explicitly — the agent, or a separate process, decides something is worth remembering and stores it — and read explicitly, retrieved when relevant to a new request. It doesn't happen automatically just from having a conversation. Long-term memory is commonly stored as embeddings in a vector database, exactly as covered in [Vector Databases](../vector-databases/vector-databases.md): retrieving a relevant past memory works precisely like RAG's own retrieval step, just retrieving from a store of past interactions or facts about a specific user rather than a general document collection. Memory retrieval carries the same real trade-off as any retrieval: too little retrieved context misses relevant history; too much wastes tokens, per [Context Window](../llms/context-window.md), on irrelevant memories.
+Memory has to be written explicitly — the agent, or a separate process, decides something is worth remembering and stores it — and read explicitly, retrieved when relevant to a new request. It doesn't happen automatically just from having a conversation. Long-term memory is commonly stored as embeddings in a vector database, exactly as covered in [Vector Databases](../vector-databases/vector-databases.md): retrieving a relevant past memory reuses the same retrieval mechanism [Retrieval](../rag/retrieval.md) already established, including the same keyword-vs-semantic choice — often semantic in production, so a paraphrased query still matches a differently-worded memory. Memory retrieval carries the same real trade-off as any retrieval: too little retrieved context misses relevant history; too much wastes tokens, per [Context Window](../llms/context-window.md), on irrelevant memories.
 
 ## Example
 
-A small memory store about one user, with a new conversation turn retrieving the most relevant past memory:
+A small memory store about one user, with a new conversation turn retrieving the most relevant past memory. This uses plain TF-IDF — keyword-based retrieval, the same honestly-named limitation [Retrieval](../rag/retrieval.md#example) already covered — not the embedding-based semantic search a production memory store would more likely use:
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -46,13 +46,13 @@ for mem, score in retrieve_memory("Can you help me with a return?"):
 ```
 
 ```text
-0.379 - User asked about the return policy on March 3rd and was frustrated with long wait times.
-0.0   - User prefers email contact over phone calls.
-0.0   - User's account is on the Pro plan, billed annually.
-0.0   - User mentioned they are based in the UK and orders often take longer to arrive.
+0.379 User asked about the return policy on March 3rd and was frustrated with long wait times.
+0.0 User prefers email contact over phone calls.
+0.0 User's account is on the Pro plan, billed annually.
+0.0 User mentioned they are based in the UK and orders often take longer to arrive.
 ```
 
-The new conversation's query correctly surfaces the one relevant memory — this user already had a frustrating return experience — while the other three memories, genuinely irrelevant to this specific request, score exactly zero. An agent with this retrieved memory can respond with real continuity ("I see your last return took longer than expected — let me make sure this one goes faster"), instead of treating this as the very first interaction with this user.
+The new conversation's query correctly surfaces the one relevant memory — this user already had a frustrating return experience — while the other three memories, genuinely irrelevant to this specific request, score exactly zero. That correct match here comes entirely from the literal shared word "return" between the query and the memory — exactly the keyword-matching mechanism, with the same blind spot to a paraphrase using no shared words that [Retrieval](../rag/retrieval.md#example) already demonstrated directly. An agent with this retrieved memory can respond with real continuity ("I see your last return took longer than expected — let me make sure this one goes faster"), instead of treating this as the very first interaction with this user.
 
 ## Where is it used?
 

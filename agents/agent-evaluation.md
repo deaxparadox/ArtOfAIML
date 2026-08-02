@@ -49,8 +49,10 @@ def run_wasteful_agent(limit=20):
             total += n
     return total, tool_calls
 
-print(run_efficient_agent())
-print(run_wasteful_agent())
+efficient_outcome, efficient_calls = run_efficient_agent()
+wasteful_outcome, wasteful_calls = run_wasteful_agent()
+print(f"efficient agent -> outcome: {efficient_outcome}, tool_calls: {efficient_calls}")
+print(f"wasteful agent  -> outcome: {wasteful_outcome}, tool_calls: {wasteful_calls}")
 ```
 
 ```text
