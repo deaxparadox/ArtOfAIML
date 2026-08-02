@@ -83,7 +83,7 @@ The hand-derived backpropagation gradients match independently-computed numerica
 
 ## Where is it used?
 
-Training every neural network architecture in this handbook and beyond — [Transformers](../llms/transformers.md), [Attention](../llms/attention.md), CNNs and RNNs / LSTMs (their own upcoming chapters) — all use backpropagation as the mechanism for computing gradients; what varies between architectures is the specific chain of operations being differentiated, not the underlying algorithm.
+Training every neural network architecture in this handbook and beyond — [Transformers](../llms/transformers.md), [Attention](../llms/attention.md), [CNNs](cnns.md) and [RNNs / LSTMs](rnns-lstms.md) — all use backpropagation as the mechanism for computing gradients; what varies between architectures is the specific chain of operations being differentiated, not the underlying algorithm.
 
 ## Advantages
 

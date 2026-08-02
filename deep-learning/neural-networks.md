@@ -80,7 +80,7 @@ MLPClassifier (1 hidden layer): [0 1 1 0]  accuracy: 1.0
 
 ## Where is it used?
 
-Every architecture covered elsewhere in this handbook is built from this same foundation: [Transformers](../llms/transformers.md) and [Attention](../llms/attention.md) stack many such layers with a specific connectivity pattern, and CNNs and RNNs / LSTMs (their own upcoming chapters) are different structural variations on the same weighted-sum-plus-activation building block.
+Every architecture covered elsewhere in this handbook is built from this same foundation: [Transformers](../llms/transformers.md) and [Attention](../llms/attention.md) stack many such layers with a specific connectivity pattern, and [CNNs](cnns.md) and [RNNs / LSTMs](rnns-lstms.md) (their own chapters) are different structural variations on the same weighted-sum-plus-activation building block.
 
 ## Advantages
 
